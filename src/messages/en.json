@@ -1,0 +1,171 @@
+{
+  "navigation": {
+    "home": "Home",
+    "whyIslam": "Why Islam",
+    "howToConvert": "How to Convert",
+    "newMuslimGuide": "New Muslim Guide",
+    "challenges": "Challenges",
+    "projects": "Ongoing Projects",
+    "about": "About Us",
+    "contact": "Contact",
+    "volunteer": "Become a Volunteer",
+    "emergency": "Emergency Support"
+  },
+  "home": {
+    "heroTitle": "New Muslim Support in Bangladesh",
+    "heroSubtitle": "Complete Guide and Support for New Muslims",
+    "heroDescription": "Whether you're considering embracing Islam or have recently converted, we're here to support you. Our expert team and volunteers will guide you through this sacred journey.",
+    "newToIslam": "New to Islam?",
+    "wantToHelp": "Want to Help?",
+    "latestUpdates": "Latest Updates",
+    "testimonials": "Success Stories",
+    "navigationTitle": "How Can We Help You?",
+    "navigationSubtitle": "Choose the section that best fits your needs and get the support you deserve",
+    "cards": {
+      "whyIslam": {
+        "title": "Why Islam?",
+        "description": "Learn about the core principles of Islam and its beautiful teachings"
+      },
+      "howToConvert": {
+        "title": "How to Convert",
+        "description": "Simple and complete guidance for embracing Islam"
+      },
+      "newMuslimGuide": {
+        "title": "New Muslim Guide",
+        "description": "Essential knowledge and guidance after embracing Islam"
+      },
+      "challenges": {
+        "title": "Challenges",
+        "description": "Common problems and their solutions"
+      },
+      "projects": {
+        "title": "Our Projects",
+        "description": "Current initiatives and community programs"
+      },
+      "about": {
+        "title": "About Us",
+        "description": "Learn about our organization and mission"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "description": "Get in touch with us for support and guidance"
+      },
+      "volunteer": {
+        "title": "Volunteer",
+        "description": "Join our team and help support new Muslims"
+      }
+    },
+    "stats": {
+      "peopleHelped": "People Helped",
+      "volunteers": "Volunteers",
+      "projects": "Projects",
+      "locations": "Locations"
+    }
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "contact": "Contact Info",
+    "emergency": "Emergency",
+    "email": "Email",
+    "office": "Office",
+    "hours": "Hours",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "whyIslam": "Why Islam",
+    "howToConvert": "How to Convert",
+    "newMuslimGuide": "New Muslim Guide",
+    "challenges": "Challenges",
+    "projects": "Projects",
+    "volunteer": "Volunteer",
+    "about": "About Us"
+  },
+  "whyIslam": {
+    "title": "Why Islam?",
+    "subtitle": "Learn about the core principles of Islam and its beautiful teachings",
+    "coreBeliefs": "Core Beliefs",
+    "benefits": "Benefits",
+    "commonQuestions": "Common Questions",
+    "resources": "Resources"
+  },
+  "howToConvert": {
+    "title": "How to Become Muslim",
+    "subtitle": "Simple and complete guidance for embracing Islam",
+    "stepByStep": "Step-by-Step Guide",
+    "requirements": "Requirements",
+    "localSupport": "Local Support",
+    "documentation": "Documentation"
+  },
+  "newMuslimGuide": {
+    "title": "New Muslim Guide",
+    "subtitle": "Essential knowledge and guidance after embracing Islam",
+    "firstSteps": "First Steps",
+    "learningResources": "Learning Resources",
+    "communityIntegration": "Community Integration",
+    "practicalGuidance": "Practical Guidance"
+  },
+  "challenges": {
+    "title": "Challenges",
+    "subtitle": "Common problems and their solutions",
+    "familyRelations": "Family Relations",
+    "socialPressure": "Social Pressure",
+    "workplaceIssues": "Workplace Issues",
+    "identityCrisis": "Identity Crisis"
+  },
+  "projects": {
+    "title": "Ongoing Projects",
+    "subtitle": "Our current initiatives and services",
+    "currentInitiatives": "Current Initiatives",
+    "impactStories": "Impact Stories",
+    "volunteerOpportunities": "Volunteer Opportunities",
+    "educationalPrograms": "Educational Programs"
+  },
+  "about": {
+    "title": "About Us",
+    "missionStatement": "Mission Statement",
+    "teamInformation": "Team Information",
+    "history": "History",
+    "achievements": "Achievements"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us",
+    "contactForm": "Contact Form",
+    "officeInformation": "Office Information",
+    "emergencyContacts": "Emergency Contacts",
+    "socialMedia": "Social Media"
+  },
+  "forms": {
+    "volunteer": {
+      "title": "Volunteer Registration",
+      "personalInfo": "Personal Information",
+      "skills": "Skills",
+      "availability": "Availability",
+      "motivation": "Motivation"
+    },
+    "newMuslim": {
+      "title": "New Muslim Registration",
+      "supportNeeded": "Support Needed",
+      "conversionStatus": "Conversion Status",
+      "contactPreference": "Contact Preference"
+    }
+  },
+  "common": {
+    "submit": "Submit",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "age": "Age",
+    "location": "Location",
+    "message": "Message",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "language": "Language",
+    "bengali": "Bengali",
+    "english": "English"
+  }
+} 

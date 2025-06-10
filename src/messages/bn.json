@@ -1,0 +1,171 @@
+{
+  "navigation": {
+    "home": "প্রধান পাতা",
+    "whyIslam": "কেন ইসলাম",
+    "howToConvert": "কীভাবে মুসলিম হবেন",
+    "newMuslimGuide": "নতুন মুসলিমদের গাইড",
+    "challenges": "চ্যালেঞ্জসমূহ",
+    "projects": "চলমান প্রকল্পসমূহ",
+    "about": "আমাদের সম্পর্কে",
+    "contact": "যোগাযোগ",
+    "volunteer": "স্বেচ্ছাসেবক হন",
+    "emergency": "জরুরি সহায়তা"
+  },
+  "home": {
+    "heroTitle": "বাংলাদেশে নতুন মুসলিমদের সহায়তা",
+    "heroSubtitle": "ইসলামে নতুন আগতদের জন্য সম্পূর্ণ গাইড এবং সহায়তা",
+    "heroDescription": "আপনি যদি ইসলাম ধর্ম গ্রহণ করতে চান বা সম্প্রতি ইসলাম গ্রহণ করেছেন, আমরা আপনার পাশে আছি। আমাদের বিশেষজ্ঞ দল এবং স্বেচ্ছাসেবকরা আপনাকে এই পবিত্র যাত্রায় সহায়তা করবেন।",
+    "newToIslam": "ইসলামে নতুন?",
+    "wantToHelp": "সাহায্য করতে চান?",
+    "latestUpdates": "সর্বশেষ আপডেট",
+    "testimonials": "সফলতার গল্প",
+    "navigationTitle": "আমরা কীভাবে আপনাকে সাহায্য করতে পারি?",
+    "navigationSubtitle": "আপনার প্রয়োজন অনুযায়ী সঠিক বিভাগ বেছে নিন এবং যোগ্য সহায়তা পান",
+    "cards": {
+      "whyIslam": {
+        "title": "কেন ইসলাম?",
+        "description": "ইসলামের মূল নীতিমালা এবং এর সুন্দর শিক্ষা সম্পর্কে জানুন"
+      },
+      "howToConvert": {
+        "title": "কীভাবে মুসলিম হবেন",
+        "description": "ইসলাম গ্রহণের সহজ এবং সম্পূর্ণ নির্দেশনা"
+      },
+      "newMuslimGuide": {
+        "title": "নতুন মুসলিমদের গাইড",
+        "description": "ইসলাম গ্রহণের পর প্রয়োজনীয় জ্ঞান এবং নির্দেশনা"
+      },
+      "challenges": {
+        "title": "চ্যালেঞ্জসমূহ",
+        "description": "সাধারণ সমস্যা এবং তার সমাধান"
+      },
+      "projects": {
+        "title": "আমাদের প্রকল্প",
+        "description": "বর্তমান উদ্যোগ এবং কমিউনিটি কর্মসূচি"
+      },
+      "about": {
+        "title": "আমাদের সম্পর্কে",
+        "description": "আমাদের সংস্থা এবং লক্ষ্য সম্পর্কে জানুন"
+      },
+      "contact": {
+        "title": "যোগাযোগ",
+        "description": "সহায়তা এবং নির্দেশনার জন্য আমাদের সাথে যোগাযোগ করুন"
+      },
+      "volunteer": {
+        "title": "স্বেচ্ছাসেবক",
+        "description": "আমাদের দলে যোগ দিন এবং নতুন মুসলিমদের সাহায্য করুন"
+      }
+    },
+    "stats": {
+      "peopleHelped": "সাহায্যপ্রাপ্ত মানুষ",
+      "volunteers": "স্বেচ্ছাসেবক",
+      "projects": "প্রকল্প",
+      "locations": "এলাকা"
+    }
+  },
+  "footer": {
+    "quickLinks": "দ্রুত লিংক",
+    "support": "সহায়তা",
+    "contact": "যোগাযোগের তথ্য",
+    "emergency": "জরুরি সাহায্য",
+    "email": "ইমেইল",
+    "office": "অফিস",
+    "hours": "সময়সূচি",
+    "privacy": "গোপনীয়তা নীতি",
+    "terms": "সেবার শর্তাবলী",
+    "whyIslam": "কেন ইসলাম",
+    "howToConvert": "কীভাবে মুসলিম হবেন",
+    "newMuslimGuide": "নতুন মুসলিমদের গাইড",
+    "challenges": "চ্যালেঞ্জসমূহ",
+    "projects": "প্রকল্পসমূহ",
+    "volunteer": "স্বেচ্ছাসেবক",
+    "about": "আমাদের সম্পর্কে"
+  },
+  "whyIslam": {
+    "title": "কেন ইসলাম?",
+    "subtitle": "ইসলামের মূল নীতিমালা এবং এর সুন্দর শিক্ষা সম্পর্কে জানুন",
+    "coreBeliefs": "মূল বিশ্বাস",
+    "benefits": "উপকারিতা",
+    "commonQuestions": "সাধারণ প্রশ্ন",
+    "resources": "সংস্থান"
+  },
+  "howToConvert": {
+    "title": "কীভাবে মুসলিম হবেন",
+    "subtitle": "ইসলাম গ্রহণের সহজ এবং সম্পূর্ণ নির্দেশনা",
+    "stepByStep": "ধাপে ধাপে গাইড",
+    "requirements": "প্রয়োজনীয় বিষয়",
+    "localSupport": "স্থানীয় সহায়তা",
+    "documentation": "প্রামাণিক কাগজপত্র"
+  },
+  "newMuslimGuide": {
+    "title": "নতুন মুসলিমদের গাইড",
+    "subtitle": "ইসলাম গ্রহণের পর প্রয়োজনীয় জ্ঞান এবং নির্দেশনা",
+    "firstSteps": "প্রথম পদক্ষেপ",
+    "learningResources": "শিক্ষার উৎস",
+    "communityIntegration": "সমাজে যুক্ত হওয়া",
+    "practicalGuidance": "ব্যবহারিক নির্দেশনা"
+  },
+  "challenges": {
+    "title": "চ্যালেঞ্জসমূহ",
+    "subtitle": "সাধারণ সমস্যা এবং তার সমাধান",
+    "familyRelations": "পারিবারিক সম্পর্ক",
+    "socialPressure": "সামাজিক চাপ",
+    "workplaceIssues": "কর্মক্ষেত্রের সমস্যা",
+    "identityCrisis": "পরিচয়ের সংকট"
+  },
+  "projects": {
+    "title": "চলমান প্রকল্পসমূহ",
+    "subtitle": "আমাদের বর্তমান কার্যক্রম এবং সেবাসমূহ",
+    "currentInitiatives": "বর্তমান উদ্যোগ",
+    "impactStories": "প্রভাবের গল্প",
+    "volunteerOpportunities": "স্বেচ্ছাসেবার সুযোগ",
+    "educationalPrograms": "শিক্ষামূলক কর্মসূচি"
+  },
+  "about": {
+    "title": "আমাদের সম্পর্কে",
+    "missionStatement": "আমাদের লক্ষ্য",
+    "teamInformation": "টিম সদস্য",
+    "history": "ইতিহাস",
+    "achievements": "অর্জনসমূহ"
+  },
+  "contact": {
+    "title": "যোগাযোগ",
+    "subtitle": "আমাদের সাথে যোগাযোগ করুন",
+    "contactForm": "যোগাযোগ ফর্ম",
+    "officeInformation": "অফিস তথ্য",
+    "emergencyContacts": "জরুরি যোগাযোগ",
+    "socialMedia": "সামাজিক মাধ্যম"
+  },
+  "forms": {
+    "volunteer": {
+      "title": "স্বেচ্ছাসেবক নিবন্ধন",
+      "personalInfo": "ব্যক্তিগত তথ্য",
+      "skills": "দক্ষতা",
+      "availability": "সময়",
+      "motivation": "প্রেরণা"
+    },
+    "newMuslim": {
+      "title": "নতুন মুসলিম নিবন্ধন",
+      "supportNeeded": "প্রয়োজনীয় সহায়তা",
+      "conversionStatus": "ধর্মান্তরের অবস্থা",
+      "contactPreference": "যোগাযোগের পছন্দ"
+    }
+  },
+  "common": {
+    "submit": "জমা দিন",
+    "name": "নাম",
+    "email": "ইমেইল",
+    "phone": "ফোন",
+    "age": "বয়স",
+    "location": "অবস্থান",
+    "message": "বার্তা",
+    "readMore": "আরও পড়ুন",
+    "learnMore": "আরও জানুন",
+    "getStarted": "শুরু করুন",
+    "loading": "লোড হচ্ছে...",
+    "error": "ত্রুটি",
+    "success": "সফল",
+    "language": "ভাষা",
+    "bengali": "বাংলা",
+    "english": "ইংরেজি"
+  }
+} 

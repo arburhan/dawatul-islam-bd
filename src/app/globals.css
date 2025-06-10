@@ -1,0 +1,409 @@
+@import "tailwindcss";
+
+/* Bengali Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  /* CSS Variables for theming */
+  :root {
+    --color-islamic-primary: #1B4332;
+    --color-islamic-secondary: #2D5A40;
+    --color-islamic-accent: #FFD700;
+    --color-islamic-light: #52B788;
+    --color-islamic-dark: #081C15;
+    --color-bangladesh-green: #006A4E;
+    --color-bangladesh-red: #F42A41;
+  }
+
+  /* Dark mode variables */
+  [data-theme="dark"] {
+    --color-islamic-primary: #52B788;
+    --color-islamic-secondary: #2D5A40;
+    --color-islamic-accent: #FFD700;
+    --color-islamic-light: #1B4332;
+    --color-islamic-dark: #F8FAFC;
+  }
+
+  /* Base styles */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: #111827;
+    background-color: #ffffff;
+    font-feature-settings: "kern" 1, "liga" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Font classes for different languages */
+  html.font-bengali,
+  html.font-bengali body,
+  .font-bengali {
+    font-family: 'Noto Sans Bengali', 'Kalpurush', 'SolaimanLipi', sans-serif !important;
+    line-height: 1.7;
+  }
+
+  html.font-english,
+  html.font-english body,
+  .font-english {
+    font-family: 'Inter', 'Open Sans', system-ui, sans-serif !important;
+  }
+
+  .font-arabic {
+    font-family: 'Noto Sans Arabic', serif;
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* Islamic geometric pattern background */
+  .islamic-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/islamic-pattern.svg');
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    opacity: 0.05;
+    z-index: -1;
+  }
+
+  /* Focus styles for accessibility */
+  .focus-islamic:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-islamic-primary), 0 0 0 4px rgba(27, 67, 50, 0.1);
+  }
+
+  /* Button styles */
+  .btn-primary {
+    background-color: var(--color-islamic-primary);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-islamic-secondary);
+  }
+
+  .btn-secondary {
+    background-color: white;
+    color: var(--color-islamic-primary);
+    border: 2px solid var(--color-islamic-primary);
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background-color: #f9fafb;
+  }
+
+  .btn-accent {
+    background-color: var(--color-islamic-accent);
+    color: var(--color-islamic-dark);
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+  }
+
+  .btn-accent:hover {
+    background-color: #eab308;
+  }
+
+  /* Card styles */
+  .card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border: 1px solid #f3f4f6;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 6px -1px rgba(27, 67, 50, 0.1), 0 2px 4px -1px rgba(27, 67, 50, 0.06);
+  }
+
+  .card-islamic {
+    background: linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary));
+    color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(27, 67, 50, 0.1), 0 2px 4px -1px rgba(27, 67, 50, 0.06);
+    padding: 1.5rem;
+  }
+
+  /* Form styles */
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-islamic-primary);
+    box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.1);
+  }
+
+  .form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    resize: vertical;
+    min-height: 120px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-textarea:focus {
+    outline: none;
+    border-color: var(--color-islamic-primary);
+    box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.1);
+  }
+
+  .form-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background-color: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-select:focus {
+    outline: none;
+    border-color: var(--color-islamic-primary);
+    box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.1);
+  }
+
+  /* Hero section gradient */
+  .hero-gradient {
+    background: linear-gradient(135deg, var(--color-islamic-primary) 0%, var(--color-islamic-secondary) 100%);
+  }
+
+  /* Stats section styling */
+  .stats-card {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border: 1px solid #f3f4f6;
+  }
+
+  .stats-number {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--color-islamic-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .stats-label {
+    color: #6b7280;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Navigation styles */
+  .nav-link {
+    color: #374151;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--color-islamic-primary);
+  }
+
+  .nav-link-active {
+    color: var(--color-islamic-primary);
+    border-bottom: 2px solid var(--color-islamic-primary);
+  }
+
+  /* Mobile menu styles */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background-color: white;
+    z-index: 50;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .mobile-menu.open {
+    transform: translateX(0);
+  }
+
+  /* Section padding utility */
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  /* Container utility */
+  .container-custom {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-custom {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Emergency banner styles */
+  .emergency-banner {
+    background-color: #dc2626;
+    color: white;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  /* Language switcher styles */
+  .language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    transition: border-color 0.2s;
+  }
+
+  .language-switcher:hover {
+    border-color: var(--color-islamic-primary);
+  }
+
+  /* Footer link styles */
+  .footer-link {
+    color: #9ca3af;
+    transition: color 0.2s;
+  }
+
+  .footer-link:hover {
+    color: white;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f3f4f6;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-islamic-primary);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-islamic-secondary);
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes slideDown {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Loading spinner */
+  .spinner {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Responsive font adjustments */
+  @media (max-width: 640px) {
+    html.font-bengali,
+    html.font-bengali body,
+    .font-bengali {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    body {
+      font-size: 12pt;
+      line-height: 1.4;
+    }
+  }
+}
