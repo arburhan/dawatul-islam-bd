@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import EmergencyBanner from '@/components/EmergencyBanner';
 
 const locales = ['bn', 'en'];
 
@@ -77,9 +76,6 @@ export default async function LocaleLayout({
       <body className="min-h-screen bg-gray-50">
         <NextIntlClientProvider messages={messages}>
           <div className="min-h-screen flex flex-col">
-            {/* Emergency Support Banner */}
-            <EmergencyBanner />
-            
             {/* Main Header */}
             <Header />
             
