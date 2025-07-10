@@ -79,7 +79,7 @@ export default function Header() {
                   <span className="font-semibold text-white">
                     {locale === 'bn' ? 'জরুরি সাহায্য:' : 'Emergency Help:'} 
                   </span>
-                  <span className="ml-2 font-bold text-white">017XXXXXXXX</span>
+                  <span className="ml-2 font-bold text-white">01517844979</span>
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function Header() {
               </div>
               <div>
                 <h1 className="text-xl lg:text-2xl font-bold leading-tight text-gray-900 transition-colors duration-300 group-hover:text-green-700">
-                  {locale === 'bn' ? 'নতুন মুসলিম সহায়তা' : 'New Muslim Aid'}
+                  {locale === 'bn' ? 'নিউমুসলিম এইড ফাউন্ডেশন' : 'New Muslim Aid Foundation'}
                 </h1>
                 <p className="text-xs text-gray-500 font-medium flex items-center">
                   <span>Bangladesh</span>
@@ -136,13 +136,24 @@ export default function Header() {
                 </Link>
               ))}
 
+              {/* About Links */}
+              {aboutNavigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="px-3 py-2 text-gray-700 hover:text-green-700 font-medium transition-all duration-200 rounded-lg hover:bg-green-50"
+                >
+                  {item.name}
+                </Link>
+              ))}
+
               {/* Resources Dropdown */}
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   className="flex items-center px-3 py-2 text-gray-700 hover:text-green-700 font-medium transition-all duration-200 rounded-lg hover:bg-green-50"
                 >
-                  <span>{locale === 'bn' ? 'সম্পদ' : 'Resources'}</span>
+                  <span>{locale === 'bn' ? 'আরও দেখুন' : 'More'}</span>
                   <ChevronDownIcon className={`w-4 h-4 ml-1 text-gray-700 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 
@@ -161,17 +172,6 @@ export default function Header() {
                   </div>
                 )}
               </div>
-
-              {/* About Links */}
-              {aboutNavigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="px-3 py-2 text-gray-700 hover:text-green-700 font-medium transition-all duration-200 rounded-lg hover:bg-green-50"
-                >
-                  {item.name}
-                </Link>
-              ))}
             </nav>
 
             {/* CTA Button & Mobile Menu - Fixed Colors */}
@@ -182,7 +182,7 @@ export default function Header() {
                 style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}
               >
                 <UserPlusIcon className="w-4 h-4 mr-2 text-white" />
-                <span className="text-white">{locale === 'bn' ? 'স্বেচ্ছাসেবক' : 'Volunteer'}</span>
+                <span className="text-white">{locale === 'bn' ? 'দায়ী হোন' : 'Become a Daaee'}</span>
               </Link>
 
               {/* Mobile menu button */}
@@ -224,7 +224,7 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <UserPlusIcon className="w-4 h-4 mr-2 text-white" />
-                  <span className="text-white">{locale === 'bn' ? 'স্বেচ্ছাসেবক হন' : 'Volunteer'}</span>
+                  <span className="text-white">{locale === 'bn' ? 'দায়ী হোন' : 'Volunteer'}</span>
                 </Link>
               </div>
             </nav>

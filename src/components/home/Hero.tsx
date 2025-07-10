@@ -61,7 +61,7 @@ export default function Hero() {
                 {locale === 'bn' ? (
                   <>
                     <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">বাংলাদেশে</span>
-                    <span className="block text-green-600">নতুন মুসলিমদের</span>
+                    <span className="block text-green-600">নও মুসলিমদের</span>
                     <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">সহায়তা</span>
                   </>
                 ) : (
@@ -99,7 +99,7 @@ export default function Hero() {
                 className="group bg-white/95 backdrop-blur-sm hover:bg-white border-2 border-green-300 hover:border-green-500 text-green-700 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
               >
                 <UserGroupIcon className="w-7 h-7 mr-4 text-green-700 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-green-700">{locale === 'bn' ? 'স্বেচ্ছাসেবক হন' : 'Become Volunteer'}</span>
+                <span className="text-green-700">{locale === 'bn' ? 'দায়ী হোন' : 'Become Volunteer'}</span>
               </Link>
             </div>
 
@@ -107,11 +107,11 @@ export default function Hero() {
             <div className="flex flex-wrap gap-8 pt-6">
               <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                 <CheckCircleIcon className="w-7 h-7 text-green-500" />
-                <span className="font-bold text-gray-800">{locale === 'bn' ? '১২৫০+ সাহায্যপ্রাপ্ত' : '1250+ Helped'}</span>
+                <span className="font-bold text-gray-800">{locale === 'bn' ? '৫০০+ সাহায্যপ্রাপ্ত নও মুসলিম' : '500+ Helped New Muslims'}</span>
               </div>
               <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                 <CheckCircleIcon className="w-7 h-7 text-green-500" />
-                <span className="font-bold text-gray-800">{locale === 'bn' ? '৮৫+ স্বেচ্ছাসেবক' : '85+ Volunteers'}</span>
+                <span className="font-bold text-gray-800">{locale === 'bn' ? '২৫+ সবেচ্ছাসেবক' : '25+ Volunteers'}</span>
               </div>
               <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                 <CheckCircleIcon className="w-7 h-7 text-green-500" />
@@ -149,15 +149,15 @@ export default function Hero() {
               {/* Enhanced Stats */}
               <div className="grid grid-cols-3 gap-8 mb-10">
                 <div className="text-center group">
-                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">1250+</div>
+                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '৫০০+' : '500+'}</div>
                   <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'সাহায্যপ্রাপ্ত' : 'Helped'}</div>
                 </div>
                 <div className="text-center group">
-                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">85+</div>
-                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'স্বেচ্ছাসেবক' : 'Volunteers'}</div>
+                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '২৫+' : '25+'}</div>
+                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'সবেচ্ছাসেবক' : 'Volunteers'}</div>
                 </div>
                 <div className="text-center group">
-                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
+                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '২৪/৭' : '24/7'}</div>
                   <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'সেবা' : 'Service'}</div>
                 </div>
               </div>
@@ -174,7 +174,7 @@ export default function Hero() {
                       {locale === 'bn' ? 'জরুরি সাহায্য' : 'Emergency Help'}
                     </h4>
                     <p className="text-red-600 font-bold text-xl">
-                      {locale === 'bn' ? 'কল করুন: ০১৭XXXXXXXX' : 'Call: 017XXXXXXXX'}
+                      {locale === 'bn' ? 'কল করুন: ০১৫১৭৮৪৪৯৭৯' : 'Call: 01517844979'}
                     </p>
                   </div>
                 </div>
@@ -203,7 +203,7 @@ export default function Hero() {
           <div className="inline-flex items-center space-x-4 bg-white/90 backdrop-blur-sm rounded-full px-8 py-4 shadow-xl">
             <GlobeAltIcon className="w-8 h-8 text-green-700" />
             <span className="text-lg font-bold text-gray-800">
-              {locale === 'bn' ? 'বিশ্বব্যাপী মুসলিম সম্প্রদায়ের সাথে যুক্ত হন' : 'Join the Global Muslim Community'}
+              {locale === 'bn' ? 'বিশ্বব্যাপী মুসলিম সম্প্রদায়ের সাথে যুক্ত হোন' : 'Join the Global Muslim Community'}
             </span>
             <div className="flex space-x-1">
               <div className="w-2 h-2 bg-islamic-primary rounded-full animate-pulse"></div>

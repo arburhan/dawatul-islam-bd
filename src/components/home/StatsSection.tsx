@@ -78,7 +78,7 @@ export default function StatsSection() {
   const stats = [
     {
       icon: UsersIcon,
-      value: 1250,
+      value: 500,
       label: t('peopleHelped'),
       suffix: '+',
       gradient: 'from-blue-500 to-cyan-500',
@@ -87,7 +87,7 @@ export default function StatsSection() {
     },
     {
       icon: HeartIcon,
-      value: 85,
+      value: 25,
       label: t('volunteers'),
       suffix: '+',
       gradient: 'from-rose-500 to-pink-500',
@@ -96,7 +96,7 @@ export default function StatsSection() {
     },
     {
       icon: FolderOpenIcon,
-      value: 24,
+      value: 4,
       label: t('projects'),
       suffix: '',
       gradient: 'from-emerald-500 to-green-500',
@@ -105,7 +105,7 @@ export default function StatsSection() {
     },
     {
       icon: MapPinIcon,
-      value: 12,
+      value: 64,
       label: t('locations'),
       suffix: '',
       gradient: 'from-purple-500 to-violet-500',
@@ -117,8 +117,8 @@ export default function StatsSection() {
   const achievements = [
     {
       icon: TrophyIcon,
-      title: locale === 'bn' ? 'জাতীয় স্বীকৃতি' : 'National Recognition',
-      description: locale === 'bn' ? 'সেরা সামাজিক সেবা সংস্থা ২০২৩' : 'Best Social Service Organization 2023',
+      title: locale === 'bn' ? 'স্বীকৃতি' : 'Recognition',
+      description: locale === 'bn' ? 'দেশবরেণ্য ব্যক্তিবর্গ ও আলেমগণের দোয়া' : 'Blessings of the Renowned Person and Alim Community',
       gradient: 'from-yellow-500 to-orange-500',
       bgColor: 'bg-yellow-50'
     },
@@ -151,20 +151,24 @@ export default function StatsSection() {
       <div className="container-custom relative">
         {/* Enhanced Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center bg-green-50 rounded-full px-6 py-3 mb-8">
+          {/* <div className="inline-flex items-center bg-green-50 rounded-full px-6 py-3 mb-8">
             <SparklesIcon className="w-5 h-5 text-green-700 mr-2" />
             <span className="text-sm font-bold text-green-700 uppercase tracking-wider">
               {locale === 'bn' ? 'আমাদের অর্জন' : 'Our Achievements'}
             </span>
-          </div>
+          </div> */}
           
-          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
+          {/* <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
             {locale === 'bn' ? 'আমাদের প্রভাব' : 'Our Impact'}
+          </h2> */}
+
+<h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
+            {locale === 'bn' ? 'ফিতনার জমানায় আমাদের করণীয়' : 'What to do in times of fitna'}
           </h2>
           
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
             {locale === 'bn'
-              ? 'আলহামদুলিল্লাহ, আল্লাহর রহমতে আমরা অনেক মানুষের জীবনে ইতিবাচক পরিবর্তন আনতে পেরেছি। প্রতিদিন আমরা নতুন সাফল্যের গল্প তৈরি করছি।'
+              ? '“তোমাদের মধ্যে একটি দল থাকা উচিত যারা কল্যাণের দিকে আহ্বান করবে, সৎ কাজের নির্দেশ দেবে এবং অসৎ কাজ থেকে বিরত রাখবে। তারাই সফলকাম।” — [সূরা আলে ইমরান, ৩:১০৪]'
               : 'We are proud to have made a positive impact in many people\'s lives. Every day, we create new success stories that inspire and transform communities.'
             }
           </p>

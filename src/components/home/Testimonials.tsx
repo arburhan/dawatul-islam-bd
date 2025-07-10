@@ -27,7 +27,7 @@ export default function Testimonials() {
       name: locale === 'bn' ? 'ফাতিমা খাতুন' : 'Fatima Khatun',
       location: locale === 'bn' ? 'চট্টগ্রাম, বাংলাদেশ' : 'Chittagong, Bangladesh',
       content: locale === 'bn'
-        ? 'আমি যখন ইসলাম গ্রহণ করি, তখন অনেক চ্যালেঞ্জের সম্মুখীন হয়েছিলাম। কিন্তু এই সংস্থার স্বেচ্ছাসেবকরা আমাকে প্রতিটি পদক্ষেপে সাহায্য করেছেন।'
+        ? 'আমি যখন ইসলাম গ্রহণ করি, তখন অনেক চ্যালেঞ্জের সম্মুখীন হয়েছিলাম। কিন্তু এই সংস্থার দায়ীরা আমাকে প্রতিটি পদক্ষেপে সাহায্য করেছেন।'
         : 'When I embraced Islam, I faced many challenges. But the volunteers of this organization helped me at every step.',
       rating: 5,
       isAnonymous: false,
@@ -86,9 +86,21 @@ export default function Testimonials() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <div>
+    <div
+      className="rounded-3xl py-16 px-2 md:px-8 lg:px-16"
+      style={{
+        background: 'linear-gradient(135deg, rgba(245,158,66,0.07), rgba(22,163,74,0.07))'
+      }}
+    >
       <div className="text-center mt-12 mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-islamic-primary mb-4">
+        <h2
+          className="text-3xl md:text-4xl font-bold mb-4"
+          style={{
+            background: 'linear-gradient(90deg, #f59e42, #16a34a)',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent'
+          }}
+        >
           {t('testimonials')}
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -101,20 +113,20 @@ export default function Testimonials() {
 
       <div className="relative max-w-4xl mx-auto">
         {/* Main Testimonial Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 relative overflow-hidden">
+        <div className="bg-white/95 rounded-2xl shadow-2xl border border-orange-200 p-8 md:p-12 relative overflow-hidden">
           {/* Background Pattern */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-islamic-primary/5 rounded-full -translate-y-16 translate-x-16"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-islamic-accent/10 rounded-full translate-y-12 -translate-x-12"></div>
+          <div className="absolute top-0 right-0 w-32 h-32" style={{background: 'rgba(22,163,74,0.10)', borderRadius: '9999px', transform: 'translate(4rem, -4rem)'}}></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24" style={{background: 'rgba(245,158,66,0.20)', borderRadius: '9999px', transform: 'translate(-3rem, 3rem)'}}></div>
           
           {/* Quote Icon */}
-          <div className="text-6xl text-islamic-primary/20 mb-6">&ldquo;</div>
+          <div className="text-6xl text-green-400/20 mb-6">&ldquo;</div>
           
           {/* Content */}
           <div className="relative z-10">
             {/* Rating */}
             <div className="flex items-center mb-6">
               {[...Array(currentTestimonial.rating)].map((_, i) => (
-                <StarIcon key={i} className="w-5 h-5 text-islamic-accent" />
+                <StarIcon key={i} className="w-5 h-5 text-orange-400" />
               ))}
             </div>
 
@@ -126,7 +138,7 @@ export default function Testimonials() {
             {/* Author Info */}
             <div className="flex items-center justify-between">
               <div>
-                <h4 className="text-xl font-bold text-islamic-primary mb-1">
+                <h4 className="text-xl font-bold text-green-700 mb-1">
                   {currentTestimonial.name}
                 </h4>
                 <p className="text-gray-600 mb-2">
@@ -139,7 +151,7 @@ export default function Testimonials() {
               </div>
 
               {/* Avatar */}
-              <div className="w-16 h-16 bg-gradient-to-br from-islamic-primary to-islamic-secondary rounded-full flex items-center justify-center text-white text-xl font-bold">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-orange-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
                 {currentTestimonial.isAnonymous ? '?' : currentTestimonial.name.charAt(0)}
               </div>
             </div>
@@ -150,7 +162,7 @@ export default function Testimonials() {
         <div className="flex items-center justify-between mt-8">
           <button
             onClick={prevTestimonial}
-            className="flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow duration-200 text-islamic-primary hover:bg-islamic-primary hover:text-white"
+            className="flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow duration-200 text-green-700 hover:bg-green-700 hover:text-white"
           >
             <ChevronLeftIcon className="w-6 h-6" />
           </button>
@@ -163,7 +175,7 @@ export default function Testimonials() {
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-colors duration-200 ${
                   index === currentIndex 
-                    ? 'bg-islamic-primary' 
+                    ? 'bg-green-700' 
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
               />
@@ -172,28 +184,34 @@ export default function Testimonials() {
 
           <button
             onClick={nextTestimonial}
-            className="flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow duration-200 text-islamic-primary hover:bg-islamic-primary hover:text-white"
+            className="flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow duration-200 text-green-700 hover:bg-green-700 hover:text-white"
           >
             <ChevronRightIcon className="w-6 h-6" />
           </button>
         </div>
 
         {/* Statistics */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 rounded-2xl p-6 border"
+          style={{
+            background: 'linear-gradient(90deg, rgba(22,163,74,0.10), rgba(245,158,66,0.10))',
+            borderColor: 'rgba(22,163,74,0.10)'
+          }}
+        >
           <div className="text-center">
-            <div className="text-3xl font-bold text-islamic-primary mb-2">98%</div>
+            <div className="text-3xl font-bold text-green-700 mb-2">98%</div>
             <div className="text-gray-600">
               {locale === 'bn' ? 'সন্তুষ্ট ব্যবহারকারী' : 'Satisfied Users'}
             </div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-islamic-primary mb-2">24/7</div>
+            <div className="text-3xl font-bold text-green-700 mb-2">24/7</div>
             <div className="text-gray-600">
               {locale === 'bn' ? 'সহায়তা সেবা' : 'Support Service'}
             </div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-islamic-primary mb-2">100%</div>
+            <div className="text-3xl font-bold text-green-700 mb-2">100%</div>
             <div className="text-gray-600">
               {locale === 'bn' ? 'বিনামূল্যে সেবা' : 'Free Service'}
             </div>

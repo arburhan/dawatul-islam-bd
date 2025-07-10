@@ -16,6 +16,13 @@ const MosqueIcon = ({ className = "w-8 h-8" }: { className?: string }) => (
   </svg>
 );
 
+// Facebook Icon Component
+const FacebookIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+  </svg>
+);
+
 export default function Footer() {
   const locale = useLocale();
   const t = useTranslations('footer');
@@ -47,7 +54,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">
-                  {locale === 'bn' ? 'নতুন মুসলিম সহায়তা' : 'New Muslim Support'}
+                  {locale === 'bn' ? 'নও মুসলিম সহায়তা' : 'New Muslim Support'}
                 </h3>
                 <p className="text-islamic-accent font-semibold">Bangladesh</p>
               </div>
@@ -55,7 +62,7 @@ export default function Footer() {
             
             <p className="text-gray-300 text-lg leading-relaxed max-w-md">
               {locale === 'bn'
-                ? 'আমরা বাংলাদেশে নতুন মুসলিমদের ইসলামিক যাত্রায় সহায়তা প্রদান করি। আমাদের লক্ষ্য প্রতিটি নতুন মুসলিমকে সঠিক পথ দেখানো।'
+                ? 'আমরা বাংলাদেশে নও মুসলিমদের ইসলামিক যাত্রায় সহায়তা প্রদান করি। আমাদের লক্ষ্য প্রতিটি নও মুসলিমকে সঠিক পথ দেখানো।'
                 : 'We provide support to new Muslims in Bangladesh in their Islamic journey. Our goal is to guide every new Muslim on the right path.'
               }
             </p>
@@ -67,8 +74,8 @@ export default function Footer() {
                   <PhoneIcon className="w-5 h-5 text-islamic-accent" />
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Emergency Hotline</p>
-                  <p className="text-islamic-accent font-bold text-lg">+880 17XXXXXXXX</p>
+                  <p className="text-white font-semibold">{locale === 'bn' ? 'জরুরি প্রয়োজনে' : 'Emergency Contact'}</p>
+                  <p className="text-islamic-accent font-bold text-lg">+880 1517844979</p>
                 </div>
               </div>
               
@@ -77,8 +84,8 @@ export default function Footer() {
                   <EnvelopeIcon className="w-5 h-5 text-islamic-accent" />
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Email</p>
-                  <p className="text-gray-300">info@newmuslimbd.org</p>
+                  <p className="text-white font-semibold">{locale === 'bn' ? 'ইমেইল' : 'Email'}</p>
+                  <p className="text-gray-300">aidnewmuslim@gmail.com</p>
                 </div>
               </div>
               
@@ -87,10 +94,18 @@ export default function Footer() {
                   <MapPinIcon className="w-5 h-5 text-islamic-accent" />
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Location</p>
+                  <p className="text-white font-semibold">{locale === 'bn' ? 'অফিস' : 'Office'}</p>
                   <p className="text-gray-300">
                     {locale === 'bn' ? 'ঢাকা, বাংলাদেশ' : 'Dhaka, Bangladesh'}
                   </p>
+                  <a 
+                    href="https://tiny.cc/dawah" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-islamic-accent hover:text-white underline text-sm transition-colors duration-200"
+                  >
+                    {locale === 'bn' ? 'গুগল ম্যাপে দেখুন' : 'See in Google Maps'}
+                  </a>
                 </div>
               </div>
               
@@ -99,10 +114,28 @@ export default function Footer() {
                   <ClockIcon className="w-5 h-5 text-islamic-accent" />
                 </div>
                 <div>
-                  <p className="text-white font-semibold">Service Hours</p>
+                  <p className="text-white font-semibold">{locale === 'bn' ? 'সেবার সময়' : 'Service Hours'}</p>
                   <p className="text-gray-300">
-                    {locale === 'bn' ? '২৪/৭ উপলব্ধ' : '24/7 Available'}
+                    {locale === 'bn' ? '২৪/৭ সেবা' : '24/7 Available'}
                   </p>
+                </div>
+              </div>
+
+              {/* Facebook Contact */}
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 bg-islamic-primary/20 rounded-lg flex items-center justify-center">
+                  <FacebookIcon className="w-5 h-5 text-islamic-accent" />
+                </div>
+                <div>
+                  <p className="text-white font-semibold">{locale === 'bn' ? 'ফেসবুক' : 'Facebook'}</p>
+                  <a 
+                    href="https://fb.com/newmuslimaid" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-islamic-accent hover:text-white transition-colors duration-200"
+                  >
+                    fb.com/newmuslimaid
+                  </a>
                 </div>
               </div>
             </div>
@@ -163,7 +196,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-300">
-              © 2024 {locale === 'bn' ? 'নতুন মুসলিম সহায়তা' : 'New Muslim Support'}. 
+              © 2024 {locale === 'bn' ? 'নিউমুসলিম এইড ফাউন্ডেশন' : 'New Muslim Support'}. 
               {locale === 'bn' ? ' সকল অধিকার সংরক্ষিত।' : ' All rights reserved.'}
             </div>
             
@@ -180,12 +213,6 @@ export default function Footer() {
               >
                 {t('terms')}
               </Link>
-              
-              <div className="text-gray-400 flex items-center space-x-2">
-                <span>{locale === 'bn' ? 'ভালোবাসায় তৈরি' : 'Made with'}</span>
-                <MosqueIcon className="w-4 h-4 text-red-400" />
-                <span>{locale === 'bn' ? 'বাংলাদেশে' : 'in Bangladesh'}</span>
-              </div>
             </div>
           </div>
         </div>

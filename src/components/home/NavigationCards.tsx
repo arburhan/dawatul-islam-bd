@@ -225,7 +225,7 @@ export default function NavigationCards() {
                 href={`/${locale}/under-development`}
                 className="bg-white/90 backdrop-blur-sm border-2 border-green-300 hover:border-green-500 text-green-700 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                <span className="text-green-700">{locale === 'bn' ? 'স্বেচ্ছাসেবক হন' : 'Join Our Team'}</span>
+                <span className="text-green-700">{locale === 'bn' ? 'দায়ী হোন' : 'Join Our Team'}</span>
               </Link>
             </div>
           </div>
