@@ -7,12 +7,18 @@ import {
   Bars3Icon, 
   XMarkIcon, 
   PhoneIcon,
-  HeartIcon,
   UserPlusIcon,
   SparklesIcon,
   ChevronDownIcon
 } from '@heroicons/react/24/outline';
-import LanguageSwitcher from './LanguageSwitcher';
+
+// Custom Mosque Icon Component (from user SVG)
+const MosqueIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
+  <svg className={className} viewBox="0 -64 640 640" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 480c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V160H0v320zm579.16-192c17.86-17.39 28.84-37.34 28.84-58.91 0-52.86-41.79-93.79-87.92-122.9-41.94-26.47-80.63-57.77-111.96-96.22L400 0l-8.12 9.97c-31.33 38.45-70.01 69.76-111.96 96.22C233.79 135.3 192 176.23 192 229.09c0 21.57 10.98 41.52 28.84 58.91h358.32zM608 320H192c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h32v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h64v-72c0-48 48-72 48-72s48 24 48 72v72h64v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h32c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM64 0S0 32 0 96v32h128V96c0-64-64-96-64-96z"/>
+  </svg>
+);
+
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,18 +43,18 @@ export default function Header() {
 
   const mainNavigation = [
     { name: t('home'), href: `/${locale}` },
-    { name: t('whyIslam'), href: `/${locale}/why-islam` },
-    { name: t('howToConvert'), href: `/${locale}/how-to-convert` },
+    { name: t('whyIslam'), href: `/${locale}/under-development` },
+    { name: t('howToConvert'), href: `/${locale}/under-development` },
   ];
 
   const resourcesNavigation = [
-    { name: t('newMuslimGuide'), href: `/${locale}/new-muslim-guide` },
-    { name: t('challenges'), href: `/${locale}/challenges` },
-    { name: t('projects'), href: `/${locale}/projects` },
+    { name: t('newMuslimGuide'), href: `/${locale}/under-development` },
+    { name: t('challenges'), href: `/${locale}/under-development` },
+    { name: t('projects'), href: `/${locale}/under-development` },
   ];
 
   const aboutNavigation = [
-    { name: t('about'), href: `/${locale}/about` },
+    { name: t('about'), href: `/${locale}/under-development` },
     { name: t('contact'), href: `/${locale}/contact` },
   ];
 
@@ -86,7 +92,6 @@ export default function Header() {
                   </span>
                 </div>
               </div>
-              <LanguageSwitcher />
             </div>
           </div>
         </div>
@@ -100,7 +105,7 @@ export default function Header() {
             <Link href={`/${locale}`} className="flex items-center space-x-3 group">
               <div className="relative">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105" style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}>
-                  <HeartIcon className="w-6 h-6 text-white" />
+                  <MosqueIcon className="w-6 h-6 text-white" />
                 </div>
                 <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--color-islamic-accent)' }}>
                   <SparklesIcon className="w-2.5 h-2.5" style={{ color: 'var(--color-islamic-dark)' }} />
@@ -172,7 +177,7 @@ export default function Header() {
             {/* CTA Button & Mobile Menu - Fixed Colors */}
             <div className="flex items-center space-x-3">
               <Link
-                href={`/${locale}/volunteer`}
+                href={`/${locale}/under-development`}
                 className="hidden md:flex items-center text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                 style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}
               >
@@ -213,7 +218,7 @@ export default function Header() {
               ))}
               <div className="pt-3 mt-3 border-t border-gray-100">
                 <Link
-                  href={`/${locale}/volunteer`}
+                  href={`/${locale}/under-development`}
                   className="flex items-center text-white px-3 py-2 rounded-lg font-semibold w-full justify-center"
                   style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}
                   onClick={() => setIsMenuOpen(false)}

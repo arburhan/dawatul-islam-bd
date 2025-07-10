@@ -3,28 +3,34 @@
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { 
-  HeartIcon,
   PhoneIcon,
   EnvelopeIcon,
   MapPinIcon,
   ClockIcon
 } from '@heroicons/react/24/outline';
 
+// Custom Mosque Icon Component (from user SVG)
+const MosqueIcon = ({ className = "w-8 h-8" }: { className?: string }) => (
+  <svg className={className} viewBox="0 -64 640 640" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 480c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V160H0v320zm579.16-192c17.86-17.39 28.84-37.34 28.84-58.91 0-52.86-41.79-93.79-87.92-122.9-41.94-26.47-80.63-57.77-111.96-96.22L400 0l-8.12 9.97c-31.33 38.45-70.01 69.76-111.96 96.22C233.79 135.3 192 176.23 192 229.09c0 21.57 10.98 41.52 28.84 58.91h358.32zM608 320H192c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h32v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h64v-72c0-48 48-72 48-72s48 24 48 72v72h64v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h32c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM64 0S0 32 0 96v32h128V96c0-64-64-96-64-96z"/>
+  </svg>
+);
+
 export default function Footer() {
   const locale = useLocale();
   const t = useTranslations('footer');
 
   const quickLinks = [
-    { name: t('whyIslam'), href: `/${locale}/why-islam` },
-    { name: t('howToConvert'), href: `/${locale}/how-to-convert` },
-    { name: t('newMuslimGuide'), href: `/${locale}/new-muslim-guide` },
-    { name: t('challenges'), href: `/${locale}/challenges` },
+    { name: t('whyIslam'), href: `/${locale}/under-development` },
+    { name: t('howToConvert'), href: `/${locale}/under-development` },
+    { name: t('newMuslimGuide'), href: `/${locale}/under-development` },
+    { name: t('challenges'), href: `/${locale}/under-development` },
   ];
 
   const supportLinks = [
-    { name: t('projects'), href: `/${locale}/projects` },
-    { name: t('volunteer'), href: `/${locale}/volunteer` },
-    { name: t('about'), href: `/${locale}/about` },
+    { name: t('projects'), href: `/${locale}/under-development` },
+    { name: t('volunteer'), href: `/${locale}/under-development` },
+    { name: t('about'), href: `/${locale}/under-development` },
     { name: t('contact'), href: `/${locale}/contact` },
   ];
 
@@ -37,7 +43,7 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center space-x-4">
               <div className="w-14 h-14 bg-gradient-to-br from-islamic-primary to-islamic-secondary rounded-2xl flex items-center justify-center shadow-lg">
-                <HeartIcon className="w-8 h-8 text-white" />
+                <MosqueIcon className="w-8 h-8 text-white" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">
@@ -163,13 +169,13 @@ export default function Footer() {
             
             <div className="flex items-center space-x-8">
               <Link
-                href={`/${locale}/privacy`}
+                href={`/${locale}/under-development`}
                 className="text-gray-300 hover:text-islamic-accent transition-colors duration-200 font-medium"
               >
                 {t('privacy')}
               </Link>
               <Link
-                href={`/${locale}/terms`}
+                href={`/${locale}/under-development`}
                 className="text-gray-300 hover:text-islamic-accent transition-colors duration-200 font-medium"
               >
                 {t('terms')}
@@ -177,7 +183,7 @@ export default function Footer() {
               
               <div className="text-gray-400 flex items-center space-x-2">
                 <span>{locale === 'bn' ? 'ভালোবাসায় তৈরি' : 'Made with'}</span>
-                <HeartIcon className="w-4 h-4 text-red-400" />
+                <MosqueIcon className="w-4 h-4 text-red-400" />
                 <span>{locale === 'bn' ? 'বাংলাদেশে' : 'in Bangladesh'}</span>
               </div>
             </div>

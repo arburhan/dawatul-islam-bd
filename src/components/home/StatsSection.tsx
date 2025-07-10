@@ -83,7 +83,7 @@ export default function StatsSection() {
       suffix: '+',
       gradient: 'from-blue-500 to-cyan-500',
       bgGradient: 'from-blue-50 to-cyan-50',
-      description: locale === 'bn' ? 'নতুন মুসলিম ভাই-বোন' : 'New Muslim Brothers & Sisters'
+      description: locale === 'bn' ? 'নও মুসলিম ভাই-বোন' : 'New Muslim Brothers & Sisters'
     },
     {
       icon: HeartIcon,
@@ -164,7 +164,7 @@ export default function StatsSection() {
           
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
             {locale === 'bn'
-              ? 'আমরা গর্বিত যে আমরা অনেক মানুষের জীবনে ইতিবাচক পরিবর্তন আনতে পেরেছি। প্রতিদিন আমরা নতুন সাফল্যের গল্প তৈরি করছি।'
+              ? 'আলহামদুলিল্লাহ, আল্লাহর রহমতে আমরা অনেক মানুষের জীবনে ইতিবাচক পরিবর্তন আনতে পেরেছি। প্রতিদিন আমরা নতুন সাফল্যের গল্প তৈরি করছি।'
               : 'We are proud to have made a positive impact in many people\'s lives. Every day, we create new success stories that inspire and transform communities.'
             }
           </p>
@@ -259,7 +259,7 @@ export default function StatsSection() {
             </h3>
             <p className="text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8 font-light">
               {locale === 'bn'
-                ? 'আমরা প্রতিটি নতুন মুসলিমকে তাদের ইসলামিক যাত্রায় সহায়তা করার জন্য প্রতিশ্রুতিবদ্ধ। আমাদের লক্ষ্য হলো একটি সহায়ক এবং স্বাগত জানানো সম্প্রদায় তৈরি করা যেখানে প্রত্যেকে নিরাপদ এবং সমর্থিত বোধ করে।'
+                ? 'আমরা প্রতিটি নও মুসলিমকে তাদের নতুন যাত্রায় সহায়তা করার জন্য প্রতিশ্রুতিবদ্ধ। আমাদের লক্ষ্য হলো প্রত্যেক নও মুসলিম এর ধর্মীয় অধিকার, নাগরিক অধিকার এবং ধর্মীয় শিক্ষা অর্জনে সর্বোচ্চ সহযোগিতা করা।'
                 : 'We are committed to supporting every new Muslim in their Islamic journey. Our goal is to create a supportive and welcoming community where everyone feels safe, supported, and spiritually fulfilled.'
               }
             </p>

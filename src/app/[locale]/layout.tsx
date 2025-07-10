@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const locales = ['bn', 'en'];
+const locales = ['bn'];
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

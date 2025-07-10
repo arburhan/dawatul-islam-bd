@@ -21,9 +21,10 @@ export default function NavigationCards() {
 
   const cards = [
     {
+      id: 'why-islam',
       title: t('cards.whyIslam.title'),
       description: t('cards.whyIslam.description'),
-      href: `/${locale}/why-islam`,
+      href: `/${locale}/under-development`,
       icon: HeartIcon,
       gradient: 'from-red-500 to-pink-500',
       bgGradient: 'from-red-50 to-pink-50',
@@ -32,9 +33,10 @@ export default function NavigationCards() {
       featured: true
     },
     {
+      id: 'how-to-convert',
       title: t('cards.howToConvert.title'),
       description: t('cards.howToConvert.description'),
-      href: `/${locale}/how-to-convert`,
+      href: `/${locale}/under-development`,
       icon: BookOpenIcon,
       gradient: 'from-blue-500 to-indigo-500',
       bgGradient: 'from-blue-50 to-indigo-50',
@@ -43,9 +45,10 @@ export default function NavigationCards() {
       featured: true
     },
     {
+      id: 'new-muslim-guide',
       title: t('cards.newMuslimGuide.title'),
       description: t('cards.newMuslimGuide.description'),
-      href: `/${locale}/new-muslim-guide`,
+      href: `/${locale}/under-development`,
       icon: UserGroupIcon,
       gradient: 'from-emerald-500 to-green-500',
       bgGradient: 'from-emerald-50 to-green-50',
@@ -54,9 +57,10 @@ export default function NavigationCards() {
       featured: true
     },
     {
+      id: 'challenges',
       title: t('cards.challenges.title'),
       description: t('cards.challenges.description'),
-      href: `/${locale}/challenges`,
+      href: `/${locale}/under-development`,
       icon: ShieldCheckIcon,
       gradient: 'from-purple-500 to-violet-500',
       bgGradient: 'from-purple-50 to-violet-50',
@@ -64,9 +68,10 @@ export default function NavigationCards() {
       hoverShadow: 'hover:shadow-purple-500/25'
     },
     {
+      id: 'projects',
       title: t('cards.projects.title'),
       description: t('cards.projects.description'),
-      href: `/${locale}/projects`,
+      href: `/${locale}/under-development`,
       icon: BriefcaseIcon,
       gradient: 'from-orange-500 to-amber-500',
       bgGradient: 'from-orange-50 to-amber-50',
@@ -74,9 +79,10 @@ export default function NavigationCards() {
       hoverShadow: 'hover:shadow-orange-500/25'
     },
     {
+      id: 'about',
       title: t('cards.about.title'),
       description: t('cards.about.description'),
-      href: `/${locale}/about`,
+      href: `/${locale}/under-development`,
       icon: InformationCircleIcon,
       gradient: 'from-cyan-500 to-blue-500',
       bgGradient: 'from-cyan-50 to-blue-50',
@@ -84,6 +90,7 @@ export default function NavigationCards() {
       hoverShadow: 'hover:shadow-cyan-500/25'
     },
     {
+      id: 'contact',
       title: t('cards.contact.title'),
       description: t('cards.contact.description'),
       href: `/${locale}/contact`,
@@ -94,9 +101,10 @@ export default function NavigationCards() {
       hoverShadow: 'hover:shadow-rose-500/25'
     },
     {
+      id: 'volunteer',
       title: t('cards.volunteer.title'),
       description: t('cards.volunteer.description'),
-      href: `/${locale}/volunteer`,
+      href: `/${locale}/under-development`,
       icon: HandRaisedIcon,
       gradient: 'from-islamic-primary to-islamic-secondary',
       bgGradient: 'from-islamic-primary/5 to-islamic-secondary/5',
@@ -140,7 +148,7 @@ export default function NavigationCards() {
             const IconComponent = card.icon;
             return (
               <Link
-                key={card.href}
+                key={card.id}
                 href={card.href}
                 className={`group relative bg-gradient-to-br ${card.bgGradient} rounded-3xl p-8 border-2 ${card.borderColor} ${card.hoverShadow} hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 overflow-hidden ${
                   card.featured ? 'lg:col-span-1 md:col-span-1' : ''
@@ -214,7 +222,7 @@ export default function NavigationCards() {
                 <span className="text-white">{locale === 'bn' ? 'যোগাযোগ করুন' : 'Contact Us'}</span>
               </Link>
               <Link
-                href={`/${locale}/volunteer`}
+                href={`/${locale}/under-development`}
                 className="bg-white/90 backdrop-blur-sm border-2 border-green-300 hover:border-green-500 text-green-700 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 <span className="text-green-700">{locale === 'bn' ? 'স্বেচ্ছাসেবক হন' : 'Join Our Team'}</span>

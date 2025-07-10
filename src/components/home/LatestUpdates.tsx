@@ -121,7 +121,7 @@ export default function LatestUpdates() {
             {/* Read More and Read Time */}
             <div className="flex items-center justify-between">
               <Link
-                href={`/${locale}/blog/${update.id}`}
+                href={`/${locale}/under-development`}
                 className="inline-flex items-center text-islamic-primary font-medium text-sm group-hover:translate-x-1 transition-transform duration-200"
               >
                 <span className="mr-2">
@@ -142,7 +142,7 @@ export default function LatestUpdates() {
       {/* View All Button */}
       <div className="text-center mt-12">
         <Link
-          href={`/${locale}/blog`}
+          href={`/${locale}/under-development`}
           className="inline-flex items-center btn-primary"
         >
           <span className="mr-2">
