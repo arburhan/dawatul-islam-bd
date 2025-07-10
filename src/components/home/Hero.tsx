@@ -94,13 +94,15 @@ export default function Hero() {
                 <ArrowRightIcon className="w-6 h-6 ml-4 text-white group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
               
-              <Link
-                href={`/${locale}/under-development`}
+              <a
+                href="https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group bg-white/95 backdrop-blur-sm hover:bg-white border-2 border-green-300 hover:border-green-500 text-green-700 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
               >
                 <UserGroupIcon className="w-7 h-7 mr-4 text-green-700 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-green-700">{locale === 'bn' ? 'দায়ী হোন' : 'Become Volunteer'}</span>
-              </Link>
+                <span className="text-green-700">{locale === 'bn' ? 'দায়ী হতে চান?' : 'Become Volunteer'}</span>
+              </a>
             </div>
 
             {/* Enhanced Trust Indicators */}

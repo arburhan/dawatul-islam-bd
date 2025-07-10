@@ -89,15 +89,17 @@ export default function CallToAction() {
               }
             </p>
             
-            <Link
-              href={`/${locale}/under-development`}
+            <a
+              href="https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center bg-white hover:bg-gray-100 text-islamic-primary font-bold py-3 px-6 rounded-lg transition-colors duration-200 group-hover:translate-y-1"
             >
               <span className="mr-2">
                 {locale === 'bn' ? 'যোগ দিন' : 'Join Us'}
               </span>
               <ArrowRightIcon className="w-5 h-5" />
-            </Link>
+            </a>
           </div>
 
           {/* Need Help */}

@@ -88,7 +88,7 @@ export default function Header() {
                 <div className="flex items-center space-x-1">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   <span className="text-xs font-medium bg-white/20 px-2 py-1 rounded-full text-white">
-                    {locale === 'bn' ? '২৪/৭ উপলব্ধ' : '24/7 Available'}
+                    {locale === 'bn' ? '২৪/৭ সেবা' : '24/7 Available'}
                   </span>
                 </div>
               </div>
@@ -176,14 +176,16 @@ export default function Header() {
 
             {/* CTA Button & Mobile Menu - Fixed Colors */}
             <div className="flex items-center space-x-3">
-              <Link
-                href={`/${locale}/under-development`}
+              <a
+                href="https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hidden md:flex items-center text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                 style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}
               >
                 <UserPlusIcon className="w-4 h-4 mr-2 text-white" />
-                <span className="text-white">{locale === 'bn' ? 'দায়ী হোন' : 'Become a Daaee'}</span>
-              </Link>
+                <span className="text-white">{locale === 'bn' ? 'দায়ী হতে চান?' : 'Become a Daaee'}</span>
+              </a>
 
               {/* Mobile menu button */}
               <button
@@ -217,15 +219,17 @@ export default function Header() {
                 </Link>
               ))}
               <div className="pt-3 mt-3 border-t border-gray-100">
-                <Link
-                  href={`/${locale}/under-development`}
+                <a
+                  href="https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center text-white px-3 py-2 rounded-lg font-semibold w-full justify-center"
                   style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <UserPlusIcon className="w-4 h-4 mr-2 text-white" />
-                  <span className="text-white">{locale === 'bn' ? 'দায়ী হোন' : 'Volunteer'}</span>
-                </Link>
+                  <span className="text-white">{locale === 'bn' ? 'দায়ী হতে চান?' : 'Volunteer'}</span>
+                </a>
               </div>
             </nav>
           </div>

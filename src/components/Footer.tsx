@@ -36,7 +36,7 @@ export default function Footer() {
 
   const supportLinks = [
     { name: t('projects'), href: `/${locale}/under-development` },
-    { name: t('volunteer'), href: `/${locale}/under-development` },
+    { name: t('volunteer'), href: 'https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2' },
     { name: t('about'), href: `/${locale}/under-development` },
     { name: t('contact'), href: `/${locale}/contact` },
   ];
