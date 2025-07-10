@@ -4,9 +4,9 @@ import {
   EnvelopeIcon,
   MapPinIcon,
   ClockIcon,
-  ChatBubbleLeftRightIcon,
-  UserIcon,
-  HeartIcon,
+  // ChatBubbleLeftRightIcon,
+  // UserIcon,
+  // HeartIcon,
 } from "@heroicons/react/24/outline";
 
 // Facebook Icon Component
@@ -67,33 +67,33 @@ export default function ContactPage() {
     },
   ];
 
-  const services = [
-    {
-      icon: HeartIcon,
-      title: locale === "bn" ? "ধর্মান্তর সহায়তা" : "Conversion Support",
-      description:
-        locale === "bn"
-          ? "ইসলাম গ্রহণে সহায়তা এবং গাইডলাইন"
-          : "Support and guidance for converting to Islam",
-    },
-    {
-      icon: UserIcon,
-      title:
-        locale === "bn" ? "নও মুসলিম কাউন্সেলিং" : "New Muslim Counseling",
-      description:
-        locale === "bn"
-          ? "ব্যক্তিগত এবং পারিবারিক সমস্যা সমাধান"
-          : "Personal and family issue resolution",
-    },
-    {
-      icon: ChatBubbleLeftRightIcon,
-      title: locale === "bn" ? "শিক্ষামূলক সেশন" : "Educational Sessions",
-      description:
-        locale === "bn"
-          ? "ইসলামিক শিক্ষা এবং প্রশিক্ষণ"
-          : "Islamic education and training",
-    },
-  ];
+  // const services = [
+  //   {
+  //     icon: HeartIcon,
+  //     title: locale === "bn" ? "ধর্মান্তর সহায়তা" : "Conversion Support",
+  //     description:
+  //       locale === "bn"
+  //         ? "ইসলাম গ্রহণে সহায়তা এবং গাইডলাইন"
+  //         : "Support and guidance for converting to Islam",
+  //   },
+  //   {
+  //     icon: UserIcon,
+  //     title:
+  //       locale === "bn" ? "নও মুসলিম কাউন্সেলিং" : "New Muslim Counseling",
+  //     description:
+  //       locale === "bn"
+  //         ? "ব্যক্তিগত এবং পারিবারিক সমস্যা সমাধান"
+  //         : "Personal and family issue resolution",
+  //   },
+  //   {
+  //     icon: ChatBubbleLeftRightIcon,
+  //     title: locale === "bn" ? "শিক্ষামূলক সেশন" : "Educational Sessions",
+  //     description:
+  //       locale === "bn"
+  //         ? "ইসলামিক শিক্ষা এবং প্রশিক্ষণ"
+  //         : "Islamic education and training",
+  //   },
+  // ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">

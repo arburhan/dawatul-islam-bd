@@ -2,7 +2,7 @@ import Hero from '@/components/home/Hero';
 import NavigationCards from '@/components/home/NavigationCards';
 import StatsSection from '@/components/home/StatsSection';
 import LatestUpdates from '@/components/home/LatestUpdates';
-import Testimonials from '@/components/home/Testimonials';
+// import Testimonials from '@/components/home/Testimonials';
 import CallToAction from '@/components/home/CallToAction';
 
 // Facebook Icon Component

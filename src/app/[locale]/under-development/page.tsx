@@ -33,12 +33,12 @@ export default function UnderDevelopmentPage() {
     }
   ];
 
-  const progressItems = [
-    { name: locale === 'bn' ? 'কন্টেন্ট প্রস্তুতি' : 'Content Preparation', progress: 85 },
-    { name: locale === 'bn' ? 'ডিজাইন সম্পূর্ণকরণ' : 'Design Completion', progress: 90 },
-    { name: locale === 'bn' ? 'পরীক্ষা এবং উন্নতি' : 'Testing & Improvement', progress: 70 },
-    { name: locale === 'bn' ? 'চূড়ান্ত প্রকাশ' : 'Final Launch', progress: 60 }
-  ];
+  // const progressItems = [
+  //   { name: locale === 'bn' ? 'কন্টেন্ট প্রস্তুতি' : 'Content Preparation', progress: 85 },
+  //   { name: locale === 'bn' ? 'ডিজাইন সম্পূর্ণকরণ' : 'Design Completion', progress: 90 },
+  //   { name: locale === 'bn' ? 'পরীক্ষা এবং উন্নতি' : 'Testing & Improvement', progress: 70 },
+  //   { name: locale === 'bn' ? 'চূড়ান্ত প্রকাশ' : 'Final Launch', progress: 60 }
+  // ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 relative overflow-hidden">

@@ -10,7 +10,7 @@ import {
   TrophyIcon,
   ClockIcon,
   ShieldCheckIcon,
-  SparklesIcon
+  // SparklesIcon
 } from '@heroicons/react/24/outline';
 
 interface CounterProps {

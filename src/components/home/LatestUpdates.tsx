@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
-import { CalendarIcon, ArrowRightIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 export default function LatestUpdates() {
   const t = useTranslations('home');
@@ -51,21 +51,21 @@ export default function LatestUpdates() {
     }
   ];
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    if (locale === 'bn') {
-      return date.toLocaleDateString('bn-BD', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-    }
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
+  // const formatDate = (dateString: string) => {
+  //   const date = new Date(dateString);
+  //   if (locale === 'bn') {
+  //     return date.toLocaleDateString('bn-BD', {
+  //       year: 'numeric',
+  //       month: 'long',
+  //       day: 'numeric'
+  //     });
+  //   }
+  //   return date.toLocaleDateString('en-US', {
+  //     year: 'numeric',
+  //     month: 'long',
+  //     day: 'numeric'
+  //   });
+  // };
 
   return (
     <div
