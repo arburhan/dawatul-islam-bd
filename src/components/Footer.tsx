@@ -28,18 +28,14 @@ export default function Footer() {
   const t = useTranslations('footer');
 
   const quickLinks = [
-    { name: t('whyIslam'), href: `/${locale}/under-development` },
-    { name: t('howToConvert'), href: `/${locale}/under-development` },
-    { name: t('newMuslimGuide'), href: `/${locale}/under-development` },
-    { name: t('challenges'), href: `/${locale}/under-development` },
-  ];
-
-  const supportLinks = [
-    { name: t('projects'), href: `/${locale}/under-development` },
-    { name: t('volunteer'), href: 'https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2' },
-    { name: t('about'), href: `/${locale}/under-development` },
+    { name: t('about'), href: `/${locale}/about` },
+    { name: t('projects'), href: `/${locale}/projects` },
+    { name: t('markazActivity'), href: `/${locale}/markaz-activity` },
+    { name: t('donator'), href: `/${locale}/donator` },
+    { name: t('volunteer'), href: `/${locale}/volunteer` },
     { name: t('contact'), href: `/${locale}/contact` },
   ];
+  const supportLinks = quickLinks;
 
   return (
     <footer className="bg-gray-900 text-white">

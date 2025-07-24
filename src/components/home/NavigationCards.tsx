@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import {
   HeartIcon,
-  BookOpenIcon,
   UserGroupIcon,
   ShieldCheckIcon,
   BriefcaseIcon,
@@ -14,6 +13,10 @@ import {
   ArrowRightIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline';
+import { BookOpenIcon } from 'lucide-react';
+
+// import { BuildingLibraryIcon, HomeModernIcon, AcademicCapIcon, BookOpenIcon, UserIcon, UsersIcon, BuildingOffice2Icon, BuildingOfficeIcon, HomeIcon, CubeIcon, Squares2X2Icon } from '@heroicons/react/24/solid';
+
 
 export default function NavigationCards() {
   const locale = useLocale();
@@ -23,8 +26,8 @@ export default function NavigationCards() {
     {
       id: 'why-islam',
       title: t('cards.whyIslam.title'),
-      description: t('cards.whyIslam.description'),
-      href: `/${locale}/under-development`,
+      /* description: t('cards.whyIslam.description'),
+      href: `/${locale}/under-development`, */
       icon: HeartIcon,
       gradient: 'from-red-500 to-pink-500',
       bgGradient: 'from-red-50 to-pink-50',
@@ -35,8 +38,8 @@ export default function NavigationCards() {
     {
       id: 'how-to-convert',
       title: t('cards.howToConvert.title'),
-      description: t('cards.howToConvert.description'),
-      href: `/${locale}/under-development`,
+      /* description: t('cards.howToConvert.description'),
+      href: `/${locale}/under-development`, */
       icon: BookOpenIcon,
       gradient: 'from-blue-500 to-indigo-500',
       bgGradient: 'from-blue-50 to-indigo-50',
@@ -47,8 +50,8 @@ export default function NavigationCards() {
     {
       id: 'new-muslim-guide',
       title: t('cards.newMuslimGuide.title'),
-      description: t('cards.newMuslimGuide.description'),
-      href: `/${locale}/under-development`,
+      /* description: t('cards.newMuslimGuide.description'),
+      href: `/${locale}/under-development`, */
       icon: UserGroupIcon,
       gradient: 'from-emerald-500 to-green-500',
       bgGradient: 'from-emerald-50 to-green-50',
@@ -59,8 +62,8 @@ export default function NavigationCards() {
     {
       id: 'challenges',
       title: t('cards.challenges.title'),
-      description: t('cards.challenges.description'),
-      href: `/${locale}/under-development`,
+      /* description: t('cards.challenges.description'),
+      href: `/${locale}/under-development`, */
       icon: ShieldCheckIcon,
       gradient: 'from-purple-500 to-violet-500',
       bgGradient: 'from-purple-50 to-violet-50',
@@ -70,8 +73,8 @@ export default function NavigationCards() {
     {
       id: 'projects',
       title: t('cards.projects.title'),
-      description: t('cards.projects.description'),
-      href: `/${locale}/under-development`,
+      /* description: t('cards.projects.description'),
+      href: `/${locale}/under-development`, */
       icon: BriefcaseIcon,
       gradient: 'from-orange-500 to-amber-500',
       bgGradient: 'from-orange-50 to-amber-50',
@@ -81,8 +84,8 @@ export default function NavigationCards() {
     {
       id: 'about',
       title: t('cards.about.title'),
-      description: t('cards.about.description'),
-      href: `/${locale}/under-development`,
+      /* description: t('cards.about.description'),
+      href: `/${locale}/under-development`, */
       icon: InformationCircleIcon,
       gradient: 'from-cyan-500 to-blue-500',
       bgGradient: 'from-cyan-50 to-blue-50',
@@ -92,8 +95,8 @@ export default function NavigationCards() {
     {
       id: 'contact',
       title: t('cards.contact.title'),
-      description: t('cards.contact.description'),
-      href: `/${locale}/contact`,
+      /* description: t('cards.contact.description'),
+      href: `/${locale}/contact`, */
       icon: PhoneIcon,
       gradient: 'from-rose-500 to-pink-500',
       bgGradient: 'from-rose-50 to-pink-50',
@@ -103,8 +106,8 @@ export default function NavigationCards() {
     {
       id: 'volunteer',
       title: t('cards.volunteer.title'),
-      description: t('cards.volunteer.description'),
-      href: `/${locale}/under-development`,
+      /* description: t('cards.volunteer.description'),
+      href: `/${locale}/under-development`, */
       icon: HandRaisedIcon,
       gradient: 'from-islamic-primary to-islamic-secondary',
       bgGradient: 'from-islamic-primary/5 to-islamic-secondary/5',
@@ -147,9 +150,11 @@ export default function NavigationCards() {
           {cards.map((card, index) => {
             const IconComponent = card.icon;
             return (
-              <Link
+              <span
+
                 key={card.id}
-                href={card.href}
+
+                /* href={card.href} */
                 className={`group relative bg-gradient-to-br ${card.bgGradient} rounded-3xl p-8 border-2 ${card.borderColor} ${card.hoverShadow} hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 overflow-hidden ${card.featured ? 'lg:col-span-1 md:col-span-1' : ''
                   }`}
                 style={{ animationDelay: `${index * 100}ms` }}
@@ -158,13 +163,6 @@ export default function NavigationCards() {
                 <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
                   <div className="w-full h-full bg-current rounded-full transform translate-x-16 -translate-y-16"></div>
                 </div>
-
-                {/* Featured badge */}
-                {card.featured && (
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-islamic-accent to-yellow-400 text-islamic-dark text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                    {locale === 'bn' ? 'জনপ্রিয়' : 'Popular'}
-                  </div>
-                )}
 
                 <div className="relative z-10 h-full flex flex-col">
                   {/* Icon - Fixed Colors */}
@@ -180,7 +178,7 @@ export default function NavigationCards() {
                       {card.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed mb-6 font-medium">
-                      {card.description}
+                      {/* {card.description} */}
                     </p>
                   </div>
 
@@ -195,7 +193,7 @@ export default function NavigationCards() {
 
                 {/* Hover effect overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
-              </Link>
+              </span>
             );
           })}
         </div>

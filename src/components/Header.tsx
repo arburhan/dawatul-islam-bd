@@ -42,26 +42,22 @@ export default function Header() {
   }, []);
 
   const mainNavigation = [
-    { name: t('home'), href: `/${locale}` },
-    { name: t('whyIslam'), href: `/${locale}/under-development` },
-    { name: t('howToConvert'), href: `/${locale}/under-development` },
-  ];
-
-  const resourcesNavigation = [
-    { name: t('newMuslimGuide'), href: `/${locale}/under-development` },
-    { name: t('challenges'), href: `/${locale}/under-development` },
-    { name: t('projects'), href: `/${locale}/under-development` },
-  ];
-
-  const aboutNavigation = [
-    { name: t('about'), href: `/${locale}/under-development` },
+    { name: t('about'), href: `/${locale}/about` },
+    { name: t('projects'), href: `/${locale}/projects` },
+    { name: t('markazActivity'), href: `/${locale}/markaz-activity` },
+    { name: t('donator'), href: `/${locale}/donator` },
+    { name: t('volunteer'), href: `/${locale}/volunteer` },
     { name: t('contact'), href: `/${locale}/contact` },
   ];
+  const allNavigation = mainNavigation;
 
-  const allNavigation = [
-    ...mainNavigation,
-    ...resourcesNavigation,
-    ...aboutNavigation
+  // Define resourcesNavigation for the dropdown menu
+  const resourcesNavigation = [
+    { name: locale === 'bn' ? 'গ্যালারি' : 'Gallery', href: `/${locale}/gallery` },
+    { name: locale === 'bn' ? 'ব্লগ' : 'Blog', href: `/${locale}/blog` },
+    { name: locale === 'bn' ? 'প্রশ্নোত্তর' : 'FAQ', href: `/${locale}/faq` },
+    { name: locale === 'bn' ? 'নোটিশ' : 'Notice', href: `/${locale}/notice` },
+    { name: locale === 'bn' ? 'ডাউনলোড' : 'Download', href: `/${locale}/download` },
   ];
 
   return (
@@ -137,15 +133,7 @@ export default function Header() {
               ))}
 
               {/* About Links */}
-              {aboutNavigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="px-3 py-2 text-gray-700 hover:text-green-700 font-medium transition-all duration-200 rounded-lg hover:bg-green-50"
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {/* Removed aboutNavigation as it is not defined */}
 
               {/* Resources Dropdown */}
               <div className="relative" ref={dropdownRef}>
@@ -184,7 +172,7 @@ export default function Header() {
                 style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}
               >
                 <UserPlusIcon className="w-4 h-4 mr-2 text-white" />
-                <span className="text-white">{locale === 'bn' ? 'দায়ী হতে চান?' : 'Become a Daaee'}</span>
+                <span className="text-white">{locale === 'bn' ? 'মাসিক দাতা হতে চান?' : 'Become a Daaee'}</span>
               </a>
 
               {/* Mobile menu button */}
@@ -228,7 +216,7 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <UserPlusIcon className="w-4 h-4 mr-2 text-white" />
-                  <span className="text-white">{locale === 'bn' ? 'দায়ী হতে চান?' : 'Volunteer'}</span>
+                  <span className="text-white">{locale === 'bn' ? 'মাসিক দাতা হতে চান?' : 'Volunteer'}</span>
                 </a>
               </div>
             </nav>

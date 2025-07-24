@@ -1,15 +1,11 @@
 {
   "navigation": {
-    "home": "Home",
-    "whyIslam": "Why Islam",
-    "howToConvert": "How to Convert",
-    "newMuslimGuide": "New Muslim Guide",
-    "challenges": "Challenges",
-    "projects": "Ongoing Projects",
     "about": "About Us",
-    "contact": "Contact",
-    "volunteer": "Become a Volunteer",
-    "emergency": "Emergency Support"
+    "projects": "Projects",
+    "markazActivity": "Markaz Activities",
+    "donator": "Become a Donor Member",
+    "volunteer": "Volunteer Registration",
+    "contact": "Contact"
   },
   "home": {
     "heroTitle": "New Muslim Support in Bangladesh",
@@ -65,20 +61,12 @@
   "footer": {
     "quickLinks": "Quick Links",
     "support": "Support",
-    "contact": "Contact Info",
-    "emergency": "Emergency",
-    "email": "Email",
-    "office": "Office",
-    "hours": "Hours",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "whyIslam": "Why Islam",
-    "howToConvert": "How to Convert",
-    "newMuslimGuide": "New Muslim Guide",
-    "challenges": "Challenges",
+    "contact": "Contact",
+    "about": "About Us",
     "projects": "Projects",
-    "volunteer": "Volunteer",
-    "about": "About Us"
+    "markazActivity": "Markaz Activities",
+    "donator": "Become a Donor Member",
+    "volunteer": "Volunteer Registration"
   },
   "whyIslam": {
     "title": "Why Islam?",
@@ -168,4 +156,4 @@
     "bengali": "Bengali",
     "english": "English"
   }
-} 
+}
