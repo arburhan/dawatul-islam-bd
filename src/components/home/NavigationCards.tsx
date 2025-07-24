@@ -132,11 +132,11 @@ export default function NavigationCards() {
               {locale === 'bn' ? 'আমাদের সেবাসমূহ' : 'Our Services'}
             </span>
           </div>
-          
+
           <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
             {t('navigationTitle')}
           </h2>
-          
+
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
             {t('navigationSubtitle')}
           </p>
@@ -150,9 +150,8 @@ export default function NavigationCards() {
               <Link
                 key={card.id}
                 href={card.href}
-                className={`group relative bg-gradient-to-br ${card.bgGradient} rounded-3xl p-8 border-2 ${card.borderColor} ${card.hoverShadow} hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 overflow-hidden ${
-                  card.featured ? 'lg:col-span-1 md:col-span-1' : ''
-                }`}
+                className={`group relative bg-gradient-to-br ${card.bgGradient} rounded-3xl p-8 border-2 ${card.borderColor} ${card.hoverShadow} hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 overflow-hidden ${card.featured ? 'lg:col-span-1 md:col-span-1' : ''
+                  }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Background pattern */}
@@ -174,7 +173,7 @@ export default function NavigationCards() {
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  
+
                   {/* Content */}
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-700 transition-colors duration-300">
@@ -208,7 +207,7 @@ export default function NavigationCards() {
               {locale === 'bn' ? 'আরও কোনো প্রশ্ন আছে?' : 'Have More Questions?'}
             </h3>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              {locale === 'bn' 
+              {locale === 'bn'
                 ? 'আমাদের বিশেষজ্ঞ দল আপনার সব প্রশ্নের উত্তর দিতে প্রস্তুত। যেকোনো সময় যোগাযোগ করুন।'
                 : 'Our expert team is ready to answer all your questions. Contact us anytime for personalized guidance.'
               }
@@ -221,12 +220,12 @@ export default function NavigationCards() {
               >
                 <span className="text-white">{locale === 'bn' ? 'যোগাযোগ করুন' : 'Contact Us'}</span>
               </Link>
-              <Link
+              {/* <Link
                 href={`/${locale}/under-development`}
                 className="bg-white/90 backdrop-blur-sm border-2 border-green-300 hover:border-green-500 text-green-700 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 <span className="text-green-700">{locale === 'bn' ? 'দায়ী হতে চান?' : 'Join Our Team'}</span>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

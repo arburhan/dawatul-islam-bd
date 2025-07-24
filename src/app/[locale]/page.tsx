@@ -1,12 +1,13 @@
 import Hero from '@/components/home/Hero';
-import NavigationCards from '@/components/home/NavigationCards';
+// import NavigationCards from '@/components/home/NavigationCards';
 import StatsSection from '@/components/home/StatsSection';
-import LatestUpdates from '@/components/home/LatestUpdates';
+// import LatestUpdates from '@/components/home/LatestUpdates';
 // import Testimonials from '@/components/home/Testimonials';
-import CallToAction from '@/components/home/CallToAction';
+// import CallToAction from '@/components/home/CallToAction';
 import Projects from '@/components/home/Projects';
 import DarulQarar from '@/components/home/DarulQarar';
 import MarkazActivity from '@/components/home/MarkazActivity';
+import DonatorForm from '@/components/home/DonatorForm';
 
 // Facebook Icon Component
 const FacebookIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
@@ -41,20 +42,22 @@ export default async function HomePage({ params }: Props) {
       </div>
       {/* projects section */}
       <Projects locale={locale as "bn" | "en"} />
-      {/* Navigation Cards */}
-      <NavigationCards />
-      {/* Statistics Section */}
-      <StatsSection />
       {/* Darul Qarar Section */}
       <DarulQarar locale={locale as "bn" | "en"} />
       {/* marqaz activity */}
       <MarkazActivity locale={locale as "bn" | "en"} />
+      {/* Donator form */}
+      <DonatorForm locale={locale as "bn" | "en"} />
+      {/* Navigation Cards */}
+      {/* <NavigationCards /> */}
+      {/* Statistics Section */}
+      <StatsSection />
       {/* Latest Updates */}
-      <LatestUpdates />
+      {/* <LatestUpdates /> */}
       {/* Testimonials */}
       {/* <Testimonials /> */}
       {/* Call to Action */}
-      <CallToAction />
+      {/* <CallToAction /> */}
     </div>
   );
 } 

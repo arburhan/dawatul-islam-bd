@@ -6,7 +6,6 @@ import {
   UserGroupIcon,
   PhoneIcon,
   StarIcon,
-  CheckCircleIcon,
   ArrowRightIcon,
   ShieldCheckIcon,
   SparklesIcon,
@@ -19,6 +18,13 @@ const MosqueIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
     <path d="M0 480c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V160H0v320zm579.16-192c17.86-17.39 28.84-37.34 28.84-58.91 0-52.86-41.79-93.79-87.92-122.9-41.94-26.47-80.63-57.77-111.96-96.22L400 0l-8.12 9.97c-31.33 38.45-70.01 69.76-111.96 96.22C233.79 135.3 192 176.23 192 229.09c0 21.57 10.98 41.52 28.84 58.91h358.32zM608 320H192c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h32v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h64v-72c0-48 48-72 48-72s48 24 48 72v72h64v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h32c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM64 0S0 32 0 96v32h128V96c0-64-64-96-64-96z" />
   </svg>
 );
+
+const HeartIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className={className}>
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+  </svg>
+);
+
 
 export default function Hero() {
   const locale = useLocale();
@@ -50,7 +56,7 @@ export default function Hero() {
                   <StarIcon className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-sm font-bold text-green-700">
-                  {locale === 'bn' ? 'বাংলাদেশের #১ ইসলামিক গাইডেন্স প্ল্যাটফর্ম' : 'Bangladesh\'s #1 Islamic Guidance Platform'}
+                  {locale === 'bn' ? 'ইসলামি দাওয়াহ-ভিত্তিক অরাজনৈতিক সেবামুলক সংস্থা' : 'Islamic Dawah-based Non-political Service Organization'}
                 </span>
               </div>
             </div>
@@ -60,23 +66,23 @@ export default function Hero() {
               <h1 className="text-4xl lg:text-6xl font-black leading-[0.9] text-gray-900">
                 {locale === 'bn' ? (
                   <>
-                    <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">বাংলাদেশে</span>
-                    <span className="block text-green-600">নও মুসলিমদের</span>
-                    <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">সহায়তা</span>
+                    <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">প্রজ্ঞা ও দাওয়াতের একটি </span>
+                    <span className="block text-green-600">স্বৈশ্বিক কেন্দ্রের স্বপ্ন:</span>
+                    {/* <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">:</span> */}
                   </>
                 ) : (
                   <>
-                    <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">New Muslim</span>
-                    <span className="block text-green-600">Aid in</span>
-                    <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Bangladesh</span>
+                    <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Envisioning a Global Center for </span>
+                    <span className="block text-green-600">Wisdom and Outreach:</span>
+                    {/* <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Bangladesh</span> */}
                   </>
                 )}
               </h1>
 
               <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl font-light">
                 {locale === 'bn'
-                  ? 'আপনি যদি ইসলাম গ্রহণ করার কথা ভাবছেন বা সম্প্রতি ইসলাম গ্রহণ করেছেন, আমরা আপনার পাশে আছি। আমাদের বিশেষজ্ঞ দল আপনাকে সাহায্য করবে।'
-                  : 'Whether you\'re considering embracing Islam or have recently converted, we\'re here to support you every step of the way with expert guidance.'
+                  ? 'সমৃদ্ধির এক উজ্জ্বল আলোকবর্তিকা, যা বিশ্বব্যাপী জ্ঞানালোক প্রজ্বলিত করতে, মনকে অনুপ্রাণিত করতে এবং     হৃদয়কে জাগিয়ে তুলতে উদ্যত।'
+                  : 'A radiant beacon of enrichment, poised to ignite global enlightenment, inspire minds, and awaken hearts.'
                 }
               </p>
             </div>
@@ -89,8 +95,8 @@ export default function Hero() {
                 style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                <MosqueIcon className="w-7 h-7 mr-4 text-white group-hover:scale-110 transition-transform duration-300" />
-                <span className="relative z-10 text-white">{locale === 'bn' ? 'ইসলাম গ্রহণ করুন' : 'Embrace Islam'}</span>
+                <HeartIcon className="w-7 h-7 mr-4 text-white group-hover:scale-110 transition-transform duration-300" />
+                <span className="relative z-10 text-white">{locale === 'bn' ? 'মাসিক দাতা হোন' : ' Monthly Donator '}</span>
                 <ArrowRightIcon className="w-6 h-6 ml-4 text-white group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
 
@@ -101,19 +107,19 @@ export default function Hero() {
                 className="group bg-white/95 backdrop-blur-sm hover:bg-white border-2 border-green-300 hover:border-green-500 text-green-700 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
               >
                 <UserGroupIcon className="w-7 h-7 mr-4 text-green-700 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-green-700">{locale === 'bn' ? 'দায়ী হতে চান?' : 'Become Volunteer'}</span>
+                <span className="text-green-700">{locale === 'bn' ? ' বার্ষিক দাতা' : 'Yearly Donator'}</span>
               </a>
             </div>
 
             {/* Enhanced Trust Indicators */}
-            <div className="flex flex-wrap gap-8 pt-6">
+            {/*   <div className="flex flex-wrap gap-8 pt-6">
               <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                 <CheckCircleIcon className="w-7 h-7 text-green-500" />
-                <span className="font-bold text-gray-800">{locale === 'bn' ? '১০,০০০+ সাহায্যপ্রাপ্ত নও মুসলিম' : '10,000+ Helped New Muslims'}</span>
+                <span className="font-bold text-gray-800">{locale === 'bn' ? '১০,০০০+ সাহায্যপ্রাপ্ত' : '10,000+ Helped New Muslims'}</span>
               </div>
               <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                 <CheckCircleIcon className="w-7 h-7 text-green-500" />
-                <span className="font-bold text-gray-800">{locale === 'bn' ? '১০০+ সবেচ্ছাসেবক' : '100+ Volunteers'}</span>
+                <span className="font-bold text-gray-800">{locale === 'bn' ? '১০০+ স্বেচ্ছাসেবক ' : '100+ Volunteers'}</span>
               </div>
               <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                 <CheckCircleIcon className="w-7 h-7 text-green-500" />
@@ -123,7 +129,7 @@ export default function Hero() {
                 <CheckCircleIcon className="w-7 h-7 text-green-500" />
                 <span className="font-bold text-gray-800">{locale === 'bn' ? '৬টি প্রকল্প' : '6 Projects'}</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Enhanced Visual Element */}
@@ -145,7 +151,7 @@ export default function Hero() {
                   </div>
                 </div>
                 <h3 className="text-4xl font-bold text-gray-900 mb-4">
-                  {locale === 'bn' ? 'আপনার যাত্রা শুরু করুন' : 'Start Your Journey'}
+                  {locale === 'bn' ? 'আপনার দানের হাতকে প্রসারিত করুন' : ' Extend Your Hand of Charity'}
                 </h3>
                 <p className="text-gray-600 text-xl font-medium">
                   {locale === 'bn' ? 'সম্পূর্ণ বিনামূল্যে এবং গোপনীয়' : 'Completely free and confidential'}
@@ -160,7 +166,7 @@ export default function Hero() {
                 </div>
                 <div className="text-center group">
                   <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '১০০+' : '100+'}</div>
-                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'সবেচ্ছাসেবক' : 'Volunteers'}</div>
+                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'স্বেচ্ছাসেবক' : 'Volunteers'}</div>
                 </div>
                 <div className="text-center group">
                   <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '২৪/৭' : '24/7'}</div>

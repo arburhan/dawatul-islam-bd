@@ -54,7 +54,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">
-                  {locale === 'bn' ? 'নও মুসলিম সহায়তা' : 'New Muslim Support'}
+                  {locale === 'bn' ? 'দাওয়াতুল ইসলাম বাংলাদেশ' : 'Dawatul Islam Bangladesh'}
                 </h3>
                 <p className="text-islamic-accent font-semibold">Bangladesh</p>
               </div>
@@ -62,8 +62,8 @@ export default function Footer() {
 
             <p className="text-gray-300 text-lg leading-relaxed max-w-md">
               {locale === 'bn'
-                ? 'আমরা বাংলাদেশে নও মুসলিমদের ইসলামিক যাত্রায় সহায়তা প্রদান করি। আমাদের লক্ষ্য প্রতিটি নও মুসলিমকে সঠিক পথ দেখানো।'
-                : 'We provide support to new Muslims in Bangladesh in their Islamic journey. Our goal is to guide every new Muslim on the right path.'
+                ? 'প্রজ্ঞা ও দাওয়াতের একটি বৈশ্বিক কেন্দ্রের স্বপ্ন:সমৃদ্ধির এক উজ্জ্বল আলোকবর্তিকা, যা বিশ্বব্যাপী জ্ঞানালোক প্রজ্বলিত করতে, মনকে অনুপ্রাণিত করতে এবং হৃদয়কে জাগিয়ে তুলতে উদ্যত।'
+                : ' Envisioning a Global Center for Wisdom and Outreach: A radiant beacon of enrichment, poised to ignite global enlightenment, inspire minds, and awaken hearts.'
               }
             </p>
 

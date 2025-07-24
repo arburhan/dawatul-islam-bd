@@ -113,15 +113,10 @@ const MarkazActivity: React.FC<MarkazActivityProps> = ({ locale = "bn" }) => {
                 <div className="flex items-center justify-center gap-4 mb-4">
                     {/* Donate Icon */}
                     <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-green-100 text-green-600 shadow">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-8 h-8"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 1.343-3 3 0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.657-1.343-3-3-3zm0 13c-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8s8 3.582 8 8c0 4.418-3.582 8-8 8zm0-18v2m0 16v2m8-10h2m-18 0H2" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 8.25.22-.22a.75.75 0 0 1 1.28.53v6.441c0 .472.214.934.64 1.137a3.75 3.75 0 0 0 4.994-1.77c.205-.428-.152-.868-.627-.868h-.507m-6-2.25h7.5M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                         </svg>
+
                     </span>
                     <h3 className="text-2xl font-semibold text-primary">
                         {locale === "bn" ? "দান করুন" : "Donate"}
@@ -141,6 +136,33 @@ const MarkazActivity: React.FC<MarkazActivityProps> = ({ locale = "bn" }) => {
                             To implement this project, approximately 70,080,382 BDT (seventy million eighty thousand three hundred eighty-two taka) will be required. We humbly request all devout brothers and sisters to participate in this noble cause by providing financial donations. May Allah, Lord of the Worlds, accept all our donations and efforts. Ameen!
                         </>
                     )}
+                </div>
+                {/* Hadith */}
+                <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6 text-lg md:text-xl text-gray-800 shadow text-center">
+                    <h4 className="text-xl font-semibold text-blue-700 mb-2">
+                        {locale === "bn" ? "হাদিস" : "Hadith"}
+                    </h4>
+                    <p>
+                        {locale === "bn"
+                            ? (
+                                <>
+                                    “বান্দা বলে: আমার সম্পদ ! আমার সম্পদ ! অথচ সে মাত্র তিনটি বস্তুর মালিক:<br />
+                                    - যা খেয়ে হজম করেছে<br />
+                                    - অথবা যা পরিধান করে পুরান করেছে<br />
+                                    - অথবা যা সদকা করে সঞ্চয় করেছে।<br />
+                                    (অর্থাৎ সদকা করে কিয়ামতের দিনের জন্য নিজের নেকি উপার্জন করেছে)।  এ ছাড়া বাকিসব ধ্বংস হবে ও তা মানুষের জন্য রেখে যাবে”। (মুসলিম; হাদীস নং ৩৯৫৯)
+                                </>
+                            )
+                            : (
+                                <>
+                                    ‘The servant says: My wealth! My wealth! Yet he is only the owner of three things: <br />
+                                    - What he has eaten and digested, <br />
+                                    - Or what he has worn out, <br />
+                                    - Or what he has given in charity and saved. (i.e., earned his good deeds for the Day of Judgment by giving charity). Everything else will perish, and he will leave it for others.’ (Muslim; Hadith No. 3959)
+                                </>
+                            )
+                        }
+                    </p>
                 </div>
             </div>
 
