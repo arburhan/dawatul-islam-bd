@@ -4,11 +4,14 @@ import StatsSection from '@/components/home/StatsSection';
 import LatestUpdates from '@/components/home/LatestUpdates';
 // import Testimonials from '@/components/home/Testimonials';
 import CallToAction from '@/components/home/CallToAction';
+import Projects from '@/components/home/Projects';
+import DarulQarar from '@/components/home/DarulQarar';
+import MarkazActivity from '@/components/home/MarkazActivity';
 
 // Facebook Icon Component
 const FacebookIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
   </svg>
 );
 
@@ -36,10 +39,16 @@ export default async function HomePage({ params }: Props) {
           {locale === 'bn' ? 'ফেসবুকে আমাদের অনুসরণ করুন' : 'Follow us on Facebook'}
         </a>
       </div>
+      {/* projects section */}
+      <Projects locale={locale as "bn" | "en"} />
       {/* Navigation Cards */}
       <NavigationCards />
       {/* Statistics Section */}
       <StatsSection />
+      {/* Darul Qarar Section */}
+      <DarulQarar locale={locale as "bn" | "en"} />
+      {/* marqaz activity */}
+      <MarkazActivity locale={locale as "bn" | "en"} />
       {/* Latest Updates */}
       <LatestUpdates />
       {/* Testimonials */}

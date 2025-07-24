@@ -1,0 +1,151 @@
+import React from "react";
+import Image from "next/image";
+import complexImage from "@/lib/images/complexImage.png"
+
+interface MarkazActivityProps {
+    locale?: "bn" | "en";
+}
+
+const activities = {
+    title: {
+        bn: "মারকাজের কার্যক্রমসমূহ",
+        en: "Activities of the Markaz"
+    },
+    description: {
+        bn: "দারুল কারার মাসজিদ ও মাদরাসা কমপ্লেক্স একটি বহুমুখী দ্বীনী কার্যক্রমের মারকাজ। যা উলামায়ে কেরাম ও দ্বীন দরদী মুসলমান ভাইদের সমন্বয়ে একটি কমিটি দ্বারাপরিচালিত।এ মারকাজের তত্ত্বাবধানে রয়েছে নিম্নোক্ত প্রতিষ্ঠানসমূহঃ",
+        en: "Darul Karar Mosque and Madrasa Complex is a center for multifaceted religious activities. It is managed by a committee consisting of respected scholars and devout Muslim brothers. The following institutions are supervised by this Markaz:"
+    },
+    list: [
+        {
+            bn: "মসজিদ",
+            en: "Mosque"
+        },
+        {
+            bn: "উচ্চতর দাওয়াহ ও গবেষণামূলক মাদরাসা",
+            en: "Higher Dawah and Research Madrasa"
+        },
+        {
+            bn: "তাফহিমুল কুরআন মাদরাসা",
+            en: "Tafhimul Quran Madrasa"
+        },
+        {
+            bn: "গ্রন্থাগার ও লাইব্রেরী",
+            en: "Library"
+        },
+        {
+            bn: "দাওয়াহ সেন্টার",
+            en: "Dawah Center"
+        },
+        {
+            bn: "নওমুসলিম সেন্টার",
+            en: "New Muslim Center"
+        },
+        {
+            bn: "দাওয়াহ গবেষণা ও প্রশিক্ষণ সেন্টার",
+            en: "Dawah Research and Training Center"
+        },
+        {
+            bn: "মাদরিসুল কুরআনের অফিস \n(মক্তব-মাদরাসা প্রতিষ্ঠায় নিয়োজিত সংস্থা)",
+            en: "Office of Madarisul Quran\n(Organization for Establishing Maktab-Madrasa)"
+        },
+        {
+            bn: "প্রকাশনা",
+            en: "Publications"
+        },
+        {
+            bn: "মেহমানখানা",
+            en: "Guest House"
+        },
+        {
+            bn: "অন্যান্য",
+            en: "Others"
+        }
+    ]
+};
+
+const MarkazActivity: React.FC<MarkazActivityProps> = ({ locale = "bn" }) => {
+    return (
+        <section className="py-16 bg-white">
+            <div className=" mx-auto px-8 md:px-24">
+                <div className="text-center max-w-4xl mx-auto mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+                        {activities.title[locale]}
+                    </h2>
+                    <p className="text-gray-600 text-xl md:text-2xl">
+                        {activities.description[locale]}
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    {/* Building Image */}
+                    <div className="relative h-[400px] lg:h-[600px] rounded-2xl overflow-hidden shadow-lg">
+                        <Image
+                            src={complexImage}
+                            alt={locale === "bn" ? "মারকাজ ভবন" : "Markaz Building"}
+                            fill
+                            priority
+                        />
+                    </div>
+
+                    {/* Activities List */}
+                    <div className="bg-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {activities.list.map((activity, index) => (
+                                <div
+                                    key={index}
+                                    className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                                >
+                                    <p className="text-xl font-medium text-gray-800">
+                                        {activity[locale]}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div className="flex justify-center"></div>
+            </div>
+
+            {/* Donate Section */}
+            <div className="max-w-6xl mx-auto mt-12 mb-4">
+                <div className="flex items-center justify-center gap-4 mb-4">
+                    {/* Donate Icon */}
+                    <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-green-100 text-green-600 shadow">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-8 h-8"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 1.343-3 3 0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.657-1.343-3-3-3zm0 13c-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8s8 3.582 8 8c0 4.418-3.582 8-8 8zm0-18v2m0 16v2m8-10h2m-18 0H2" />
+                        </svg>
+                    </span>
+                    <h3 className="text-2xl font-semibold text-primary">
+                        {locale === "bn" ? "দান করুন" : "Donate"}
+                    </h3>
+                </div>
+                <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6 text-lg md:text-xl text-gray-800 leading-relaxed shadow text-center">
+                    {locale === "bn" ? (
+                        <>
+                            বর্তমানে কমপ্লেক্সের নামে দানপত্রমূলে দলীলকৃত ৫ (পাঁচ) শতাংশ (এবং প্রস্তাবিত ২.৫ শতাংশ) জমির উপর ১০ (দশ) তলা বিশিষ্ট ভবন নির্মাণের পদক্ষেপ প্রহণ করা হয়েছে। <br />
+                            ভবনের ১ম ও ২য় তলা মসজিদের জন্য এবং ৩য় থেকে ১০ম তলা অন্যান্য প্রতিষ্ঠানের জন্য নির্ধারিত থাকবে। <br />
+                            এ প্রকল্প বাস্তবায়ন করতে প্রায় ৭,০০,৮০,৩৮২/- (সাত কোটি আশি হাজার তিনশত বিরাশি) টাকা ব্যয় হবে। দ্বীন-দরদী সকল ভাই-বোনের নিকট উক্ত মহতি কাজে অর্থিক অনুদান দিয়ে অংশগ্রহণ করার বিনীত অনুরোধ করছি।  আল্লাহ রব্বুল আলামীন আমাদের সকলের দান ও প্রচেষ্টা কবুল করুন।   আমীন !
+                        </>
+                    ) : (
+                        <>
+                            Currently, steps have been taken to construct a 10-storey building on 5 (five) percent of land registered in the name of the complex by deed of donation (and proposed 2.5 percent). <br /><br />
+                            The 1st and 2nd floors of the building will be designated for the mosque, and the 3rd to 10th floors will be allocated for other institutions. <br /><br />
+                            To implement this project, approximately 70,080,382 BDT (seventy million eighty thousand three hundred eighty-two taka) will be required. We humbly request all devout brothers and sisters to participate in this noble cause by providing financial donations. May Allah, Lord of the Worlds, accept all our donations and efforts. Ameen!
+                        </>
+                    )}
+                </div>
+            </div>
+
+        </section>
+    );
+};
+
+export default MarkazActivity;

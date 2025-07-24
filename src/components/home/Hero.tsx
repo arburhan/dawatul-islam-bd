@@ -2,8 +2,8 @@
 
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
-import { 
-  UserGroupIcon, 
+import {
+  UserGroupIcon,
   PhoneIcon,
   StarIcon,
   CheckCircleIcon,
@@ -16,7 +16,7 @@ import {
 // Custom Mosque Icon Component (from user SVG)
 const MosqueIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
   <svg className={className} viewBox="0 -64 640 640" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 480c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V160H0v320zm579.16-192c17.86-17.39 28.84-37.34 28.84-58.91 0-52.86-41.79-93.79-87.92-122.9-41.94-26.47-80.63-57.77-111.96-96.22L400 0l-8.12 9.97c-31.33 38.45-70.01 69.76-111.96 96.22C233.79 135.3 192 176.23 192 229.09c0 21.57 10.98 41.52 28.84 58.91h358.32zM608 320H192c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h32v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h64v-72c0-48 48-72 48-72s48 24 48 72v72h64v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h32c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM64 0S0 32 0 96v32h128V96c0-64-64-96-64-96z"/>
+    <path d="M0 480c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V160H0v320zm579.16-192c17.86-17.39 28.84-37.34 28.84-58.91 0-52.86-41.79-93.79-87.92-122.9-41.94-26.47-80.63-57.77-111.96-96.22L400 0l-8.12 9.97c-31.33 38.45-70.01 69.76-111.96 96.22C233.79 135.3 192 176.23 192 229.09c0 21.57 10.98 41.52 28.84 58.91h358.32zM608 320H192c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h32v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h64v-72c0-48 48-72 48-72s48 24 48 72v72h64v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h32c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM64 0S0 32 0 96v32h128V96c0-64-64-96-64-96z" />
   </svg>
 );
 
@@ -31,16 +31,16 @@ export default function Hero() {
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-islamic-primary/10 to-islamic-secondary/5 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-gradient-to-br from-islamic-accent/15 to-islamic-light/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-islamic-secondary/8 to-islamic-primary/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        
+
         {/* Geometric patterns */}
         <div className="absolute top-20 left-20 w-4 h-4 bg-islamic-accent/30 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
         <div className="absolute top-40 right-32 w-3 h-3 bg-islamic-primary/40 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }}></div>
         <div className="absolute bottom-32 left-1/3 w-2 h-2 bg-islamic-light/50 rounded-full animate-bounce" style={{ animationDelay: '2.5s' }}></div>
       </div>
-      
+
       <div className="relative container-custom py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          
+
           {/* Enhanced Content */}
           <div className="space-y-10">
             {/* Premium Badge - Fixed Colors */}
@@ -72,7 +72,7 @@ export default function Hero() {
                   </>
                 )}
               </h1>
-              
+
               <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl font-light">
                 {locale === 'bn'
                   ? 'আপনি যদি ইসলাম গ্রহণ করার কথা ভাবছেন বা সম্প্রতি ইসলাম গ্রহণ করেছেন, আমরা আপনার পাশে আছি। আমাদের বিশেষজ্ঞ দল আপনাকে সাহায্য করবে।'
@@ -93,7 +93,7 @@ export default function Hero() {
                 <span className="relative z-10 text-white">{locale === 'bn' ? 'ইসলাম গ্রহণ করুন' : 'Embrace Islam'}</span>
                 <ArrowRightIcon className="w-6 h-6 ml-4 text-white group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
-              
+
               <a
                 href="https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2"
                 target="_blank"
@@ -109,15 +109,19 @@ export default function Hero() {
             <div className="flex flex-wrap gap-8 pt-6">
               <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                 <CheckCircleIcon className="w-7 h-7 text-green-500" />
-                <span className="font-bold text-gray-800">{locale === 'bn' ? '৫০০+ সাহায্যপ্রাপ্ত নও মুসলিম' : '500+ Helped New Muslims'}</span>
+                <span className="font-bold text-gray-800">{locale === 'bn' ? '১০,০০০+ সাহায্যপ্রাপ্ত নও মুসলিম' : '10,000+ Helped New Muslims'}</span>
               </div>
               <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                 <CheckCircleIcon className="w-7 h-7 text-green-500" />
-                <span className="font-bold text-gray-800">{locale === 'bn' ? '২৫+ সবেচ্ছাসেবক' : '25+ Volunteers'}</span>
+                <span className="font-bold text-gray-800">{locale === 'bn' ? '১০০+ সবেচ্ছাসেবক' : '100+ Volunteers'}</span>
               </div>
               <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                 <CheckCircleIcon className="w-7 h-7 text-green-500" />
                 <span className="font-bold text-gray-800">{locale === 'bn' ? '২৪/৭ সেবা' : '24/7 Service'}</span>
+              </div>
+              <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
+                <CheckCircleIcon className="w-7 h-7 text-green-500" />
+                <span className="font-bold text-gray-800">{locale === 'bn' ? '৬টি প্রকল্প' : '6 Projects'}</span>
               </div>
             </div>
           </div>
@@ -129,7 +133,7 @@ export default function Hero() {
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-islamic-accent/20 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-islamic-primary/10 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
-              
+
               {/* Header - Fixed Colors */}
               <div className="text-center mb-10 relative z-10">
                 <div className="relative inline-block mb-8">
@@ -151,16 +155,20 @@ export default function Hero() {
               {/* Enhanced Stats */}
               <div className="grid grid-cols-3 gap-8 mb-10">
                 <div className="text-center group">
-                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '৫০০+' : '500+'}</div>
+                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '১০,০০০+' : '10,000+'}</div>
                   <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'সাহায্যপ্রাপ্ত' : 'Helped'}</div>
                 </div>
                 <div className="text-center group">
-                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '২৫+' : '25+'}</div>
+                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '১০০+' : '100+'}</div>
                   <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'সবেচ্ছাসেবক' : 'Volunteers'}</div>
                 </div>
                 <div className="text-center group">
                   <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '২৪/৭' : '24/7'}</div>
                   <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'সেবা' : 'Service'}</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '৬টি' : '6'} </div>
+                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'প্রকল্প' : 'Projects'}</div>
                 </div>
               </div>
 
@@ -176,7 +184,7 @@ export default function Hero() {
                       {locale === 'bn' ? 'জরুরি সাহায্য' : 'Emergency Help'}
                     </h4>
                     <p className="text-red-600 font-bold text-xl">
-                      {locale === 'bn' ? 'কল করুন: ০১৫১৭৮৪৪৯৭৯' : 'Call: 01517844979'}
+                      {locale === 'bn' ? 'কল করুন: ০১৮১৮৬৪২১৬৬' : 'Call: ‎01818642166'}
                     </p>
                   </div>
                 </div>

@@ -2,10 +2,10 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { useEffect, useState, useRef } from 'react';
-import { 
-  UsersIcon, 
-  HeartIcon, 
-  FolderOpenIcon, 
+import {
+  UsersIcon,
+  HeartIcon,
+  FolderOpenIcon,
   MapPinIcon,
   TrophyIcon,
   ClockIcon,
@@ -32,9 +32,9 @@ function Counter({ end, duration = 2000, suffix = '', isVisible = false }: Count
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
-      
+
       setCount(Math.floor(progress * end));
-      
+
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animate);
       }
@@ -78,7 +78,7 @@ export default function StatsSection() {
   const stats = [
     {
       icon: UsersIcon,
-      value: 500,
+      value: 10000,
       label: t('peopleHelped'),
       suffix: '+',
       gradient: 'from-blue-500 to-cyan-500',
@@ -87,7 +87,7 @@ export default function StatsSection() {
     },
     {
       icon: HeartIcon,
-      value: 25,
+      value: 100,
       label: t('volunteers'),
       suffix: '+',
       gradient: 'from-rose-500 to-pink-500',
@@ -96,7 +96,7 @@ export default function StatsSection() {
     },
     {
       icon: FolderOpenIcon,
-      value: 4,
+      value: 6,
       label: t('projects'),
       suffix: '',
       gradient: 'from-emerald-500 to-green-500',
@@ -157,15 +157,15 @@ export default function StatsSection() {
               {locale === 'bn' ? 'আমাদের অর্জন' : 'Our Achievements'}
             </span>
           </div> */}
-          
+
           {/* <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
             {locale === 'bn' ? 'আমাদের প্রভাব' : 'Our Impact'}
           </h2> */}
 
-<h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
+          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
             {locale === 'bn' ? 'ফিতনার জমানায় আমাদের করণীয়' : 'What to do in times of fitna'}
           </h2>
-          
+
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
             {locale === 'bn'
               ? '“তোমাদের মধ্যে একটি দল থাকা উচিত যারা কল্যাণের দিকে আহ্বান করবে, সৎ কাজের নির্দেশ দেবে এবং অসৎ কাজ থেকে বিরত রাখবে। তারাই সফলকাম।” — [সূরা আলে ইমরান, ৩:১০৪]'
@@ -178,7 +178,7 @@ export default function StatsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
-            
+
             return (
               <div
                 key={stat.label}
@@ -195,7 +195,7 @@ export default function StatsSection() {
                   <div className={`w-16 h-16 bg-gradient-to-br ${stat.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  
+
                   {/* Number */}
                   <div className="text-center mb-4">
                     <div className="text-5xl font-black text-gray-900 mb-2 group-hover:scale-105 transition-transform duration-300">
@@ -267,7 +267,7 @@ export default function StatsSection() {
                 : 'We are committed to supporting every new Muslim in their Islamic journey. Our goal is to create a supportive and welcoming community where everyone feels safe, supported, and spiritually fulfilled.'
               }
             </p>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="flex flex-col items-center space-y-3 p-4 rounded-2xl bg-green-50">
                 <div className="w-3 h-3 rounded-full" style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}></div>

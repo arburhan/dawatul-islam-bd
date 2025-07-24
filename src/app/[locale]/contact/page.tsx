@@ -28,25 +28,25 @@ export default function ContactPage() {
     {
       icon: PhoneIcon,
       title: locale === "bn" ? "ফোন" : "Phone",
-      value: "01517844979",
+      value: "‎01818642166",
       description:
         locale === "bn" ? "২৪/৭ জরুরি সহায়তা" : "24/7 Emergency Support",
     },
     {
       icon: EnvelopeIcon,
       title: locale === "bn" ? "ইমেইল" : "Email",
-      value: "aidnewmuslim@gmail.com",
+      value: "dawatulislambdf@gmail.com",
       description:
         locale === "bn" ? "সাধারণ প্রশ্নের জন্য" : "For General Inquiries",
-      link: "mailto:aidnewmuslim@gmail.com",
+      link: "mailto:dawatulislambdf@gmail.com",
     },
     {
       icon: MapPinIcon,
       title: locale === "bn" ? "অফিস" : "Office",
       value:
         locale === "bn"
-          ? "হোল্ডিং নং-০৩, ফকিরবাড়ি মার্কেট, ব্লক-বি, মিরপুর-১০"
-          : "Holding No-03, Fakir Bari Market, Block-B, Mirpur-10",
+          ? "হোল্ডিং নং-০৩, ফকিরবাড়ি মার্কেট, ব্লক-বি, মিরপুর-১০, ঢাকা-১২১৬"
+          : "Holding No-03, Fakir Bari Market, Block-B, Mirpur-10, Dhaka-1216",
       description: locale === "bn" ? "মূল কার্যালয়" : "Main Office",
       link: "https://tiny.cc/dawah",
       showMapLink: true,
@@ -357,7 +357,7 @@ export default function ContactPage() {
                 ? "আমাদের জরুরি হটলাইনে কল করুন। আমরা ২৪/৭ আপনার পাশে আছি।"
                 : "Call our emergency hotline. We are available 24/7."}
             </p>
-            <div className="text-4xl font-bold">01517844979</div>
+            <div className="text-4xl font-bold">‎01818642166</div>
           </div>
         </div>
       </div>
