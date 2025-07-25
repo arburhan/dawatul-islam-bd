@@ -35,7 +35,11 @@ export default function Footer() {
     { name: t('volunteer'), href: `/${locale}/volunteer` },
     { name: t('contact'), href: `/${locale}/contact` },
   ];
-  const supportLinks = quickLinks;
+  const supportLinks = [
+    { name: t('donator'), href: `/${locale}/donator` },
+    { name: t('volunteer'), href: `/${locale}/volunteer` },
+    { name: t('contact'), href: `/${locale}/contact` },
+  ];
 
   return (
     <footer className="bg-gray-900 text-white">

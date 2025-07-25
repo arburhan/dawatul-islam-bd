@@ -25,20 +25,20 @@ export async function generateMetadata({
 
   return {
     title: locale === 'bn'
-      ? 'বাংলাদেশে নও মুসলিমদের সহায়তা'
-      : 'New Muslim Support - Bangladesh',
+      ? 'দাওয়াতুল ইসলাম বাংলাদেশ'
+      : "Dawatul Islam Bangladesh",
     description: locale === 'bn'
-      ? 'ইসলামে নতুন আগতদের জন্য সম্পূর্ণ গাইড এবং সহায়তা'
+      ? 'A shining beacon of prosperity, striving to illuminate the world, inspire minds, and awaken hearts.'
       : 'Complete guide and support for new Muslims in Bangladesh',
     keywords: locale === 'bn'
       ? 'ইসলাম, মুসলিম, ধর্মান্তর, বাংলাদেশ, সহায়তা, গাইড'
       : 'Islam, Muslim, conversion, Bangladesh, support, guide',
     openGraph: {
       title: locale === 'bn'
-        ? 'বাংলাদেশে নও মুসলিমদের সহায়তা'
-        : 'New Muslim Support - Bangladesh',
+        ? 'দাওয়াতুল ইসলাম বাংলাদেশ'
+        : "Dawatul Islam Bangladesh",
       description: locale === 'bn'
-        ? 'ইসলামে নতুন আগতদের জন্য সম্পূর্ণ গাইড এবং সহায়তা'
+        ? 'A shining beacon of prosperity, striving to illuminate the world, inspire minds, and awaken hearts.'
         : 'Complete guide and support for new Muslims in Bangladesh',
       type: 'website',
       locale: locale === 'bn' ? 'bn_BD' : 'en_US',
