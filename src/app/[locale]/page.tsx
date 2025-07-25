@@ -9,6 +9,7 @@ import DarulQarar from '@/components/home/DarulQarar';
 import MarkazActivity from '@/components/home/MarkazActivity';
 import DonatorForm from '@/components/home/DonatorForm';
 import MosqueMap from '@/components/home/MosqueMap';
+import PrayerCard from '@/components/home/PrayerCard';
 
 // Facebook Icon Component
 const FacebookIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
@@ -61,6 +62,8 @@ export default async function HomePage({ params }: Props) {
       {/* <CallToAction /> */}
       {/* mosque location */}
       <MosqueMap />
+      {/* prayer card */}
+      <PrayerCard />
     </div>
   );
 } 

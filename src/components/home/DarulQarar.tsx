@@ -44,8 +44,8 @@ const DarulQarar: React.FC<DarulQararProps> = ({ locale = "bn" }) => {
                                 <p className="text-gray-600 font-medium">
                                     {locale === "bn" ? "অ্যাকাউন্ট নাম" : "Account Name"}:
                                 </p>
-                                <p className="text-xl font-semibold">
-                                    {locale === "bn" ? bankDetails.accountName.bn : bankDetails.accountName.en}
+                                <p className="text-xl font-semibold font-sans">
+                                    {bankDetails.accountName.en}
                                 </p>
                             </div>
 

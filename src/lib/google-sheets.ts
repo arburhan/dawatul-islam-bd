@@ -1,3 +1,47 @@
+// Donator form submission
+export interface DonatorFormData {
+  name: string;
+  address: string;
+  mobile: string;
+  donationType: string;
+  amount: string;
+  comment?: string;
+  submittedAt?: string;
+}
+
+export async function appendDonationToSheet(data: DonatorFormData) {
+  try {
+    const doc = await getGoogleSheetsClient();
+    let sheet = doc.sheetsByTitle['Donations'];
+    if (!sheet) {
+      sheet = await doc.addSheet({
+        title: 'Donations',
+        headerValues: [
+          'Name',
+          'Address',
+          'Mobile',
+          'Donation Type',
+          'Amount',
+          'Comment',
+          'Submitted At'
+        ]
+      });
+    }
+    await sheet.addRow([
+      data.name,
+      data.address,
+      data.mobile,
+      data.donationType,
+      data.amount,
+      data.comment || '',
+      data.submittedAt || new Date().toISOString()
+    ]);
+    return { success: true, message: 'Donation submitted successfully' };
+  } catch (error) {
+    console.error('Error submitting donation:', error);
+    return { success: false, message: 'Failed to submit donation' };
+  }
+}
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
 
@@ -20,7 +64,7 @@ export async function getGoogleSheetsClient() {
 
   const doc = new GoogleSpreadsheet(SPREADSHEET_ID, serviceAccountAuth);
   await doc.loadInfo();
-  
+
   return doc;
 }
 
@@ -44,7 +88,7 @@ export interface VolunteerFormData {
 export async function submitVolunteerForm(data: VolunteerFormData) {
   try {
     const doc = await getGoogleSheetsClient();
-    
+
     // Get or create the volunteers sheet
     let sheet = doc.sheetsByTitle['Volunteers'];
     if (!sheet) {
@@ -114,7 +158,7 @@ export interface NewMuslimFormData {
 export async function submitNewMuslimForm(data: NewMuslimFormData) {
   try {
     const doc = await getGoogleSheetsClient();
-    
+
     // Get or create the new Muslims sheet
     let sheet = doc.sheetsByTitle['New Muslims'];
     if (!sheet) {
@@ -176,7 +220,7 @@ export interface ContactFormData {
 export async function submitContactForm(data: ContactFormData) {
   try {
     const doc = await getGoogleSheetsClient();
-    
+
     // Get or create the contacts sheet
     let sheet = doc.sheetsByTitle['Contacts'];
     if (!sheet) {

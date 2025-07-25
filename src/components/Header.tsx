@@ -11,6 +11,9 @@ import {
   SparklesIcon,
   ChevronDownIcon
 } from '@heroicons/react/24/outline';
+import { Button } from '@headlessui/react';
+import { useRouter } from 'next/navigation';
+
 
 // Custom Mosque Icon Component (from user SVG)
 const MosqueIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
@@ -26,6 +29,7 @@ export default function Header() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const locale = useLocale();
   const t = useTranslations('navigation');
+  const router = useRouter();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -63,7 +67,7 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200">
       {/* Top Emergency Bar - Fixed */}
-      <div className="bg-gradient-to-r from-red-600 to-red-500 text-white py-2.5">
+      <div className="bg-gradient-to-r  from-blue-600 to-cyan-500 text-white py-2.5">
         <div className="container-custom">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-3">
@@ -164,16 +168,14 @@ export default function Header() {
 
             {/* CTA Button & Mobile Menu - Fixed Colors */}
             <div className="flex items-center space-x-3">
-              <a
-                href="https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden md:flex items-center text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-                style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}
+              <Button
+                onClick={() => router.push(`/bn/monthly-donate`)}
+                className="hidden md:flex items-center text-white px-5 py-2.5 rounded-lg font-semibold text-sm bg-cyan-500  cursor-pointer"
+
               >
                 <UserPlusIcon className="w-4 h-4 mr-2 text-white" />
                 <span className="text-white">{locale === 'bn' ? 'মাসিক দাতা হতে চান?' : 'Become a Daaee'}</span>
-              </a>
+              </Button>
 
               {/* Mobile menu button */}
               <button

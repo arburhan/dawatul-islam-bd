@@ -1,9 +1,7 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import Link from 'next/link';
 import {
-  UserGroupIcon,
   PhoneIcon,
   StarIcon,
   ArrowRightIcon,
@@ -14,6 +12,8 @@ import {
 
 import DIBLogo from '@/lib/images/DIBLogo.png';
 import Image from 'next/image';
+import { Button } from '@headlessui/react';
+import { useRouter } from 'next/navigation';
 
 
 const HeartIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
@@ -25,6 +25,7 @@ const HeartIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
 
 export default function Hero() {
   const locale = useLocale();
+  const router = useRouter();
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-emerald-50/20 flex items-center overflow-hidden">
@@ -47,7 +48,7 @@ export default function Hero() {
           {/* Enhanced Content */}
           <div className="space-y-10">
             {/* Premium Badge - Fixed Colors */}
-            <div className="inline-flex items-center bg-green-50 border border-green-200 rounded-full px-8 py-4 shadow-lg backdrop-blur-sm">
+            <div className="inline-flex items-center bg-blue-50 border border-blue-200 rounded-full px-8 py-4 shadow-lg backdrop-blur-sm">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}>
                   <StarIcon className="w-5 h-5 text-white" />
@@ -63,15 +64,12 @@ export default function Hero() {
               <h1 className="text-4xl lg:text-6xl font-black leading-[0.9] text-gray-900">
                 {locale === 'bn' ? (
                   <>
-                    <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">প্রজ্ঞা ও দাওয়াতের একটি </span>
-                    <span className="block text-green-600">স্বৈশ্বিক কেন্দ্রের স্বপ্ন:</span>
-                    {/* <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">:</span> */}
+                    <span className="block text-blue-500">প্রজ্ঞা ও দাওয়াতের পরিচর্যা কেন্দ্র</span>
                   </>
                 ) : (
                   <>
-                    <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Envisioning a Global Center for </span>
-                    <span className="block text-green-600">Wisdom and Outreach:</span>
-                    {/* <span className="block bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Bangladesh</span> */}
+                    <span className="block text-blue-500"> Center for Nurturing Wisdom and Da`&#39;`wah </span>
+
                   </>
                 )}
               </h1>
@@ -86,47 +84,18 @@ export default function Hero() {
 
             {/* Enhanced CTA Buttons - Fixed Colors */}
             <div className="flex flex-col sm:flex-row gap-8">
-              <Link
-                href={`/${locale}/under-development`}
-                className="group relative text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-500 flex items-center justify-center shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 overflow-hidden"
-                style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}
+              <Button
+                onClick={() => router.push(`/bn/monthly-donate`)}
+                className="group relative text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-500 flex items-center justify-center shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 overflow-hidden cursor-pointer"
+                style={{ background: `linear-gradient(135deg, #e54545, #b54949)` }} // red-500 to red-400
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 <HeartIcon className="w-7 h-7 mr-4 text-white group-hover:scale-110 transition-transform duration-300" />
                 <span className="relative z-10 text-white">{locale === 'bn' ? 'মাসিক দাতা হোন' : ' Monthly Donator '}</span>
                 <ArrowRightIcon className="w-6 h-6 ml-4 text-white group-hover:translate-x-2 transition-transform duration-300" />
-              </Link>
+              </Button>
 
-              <a
-                href="https://docs.google.com/forms/u/0/d/1SuoAiAINk5s2KauBBPRRyye7sezcKmxh3Jm14ahiDjA/edit?fromCopy=true&ct=2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-white/95 backdrop-blur-sm hover:bg-white border-2 border-green-300 hover:border-green-500 text-green-700 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-              >
-                <UserGroupIcon className="w-7 h-7 mr-4 text-green-700 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-green-700">{locale === 'bn' ? ' বার্ষিক দাতা' : 'Yearly Donator'}</span>
-              </a>
             </div>
-
-            {/* Enhanced Trust Indicators */}
-            {/*   <div className="flex flex-wrap gap-8 pt-6">
-              <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-                <CheckCircleIcon className="w-7 h-7 text-green-500" />
-                <span className="font-bold text-gray-800">{locale === 'bn' ? '১০,০০০+ সাহায্যপ্রাপ্ত' : '10,000+ Helped New Muslims'}</span>
-              </div>
-              <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-                <CheckCircleIcon className="w-7 h-7 text-green-500" />
-                <span className="font-bold text-gray-800">{locale === 'bn' ? '১০০+ স্বেচ্ছাসেবক ' : '100+ Volunteers'}</span>
-              </div>
-              <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-                <CheckCircleIcon className="w-7 h-7 text-green-500" />
-                <span className="font-bold text-gray-800">{locale === 'bn' ? '২৪/৭ সেবা' : '24/7 Service'}</span>
-              </div>
-              <div className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-                <CheckCircleIcon className="w-7 h-7 text-green-500" />
-                <span className="font-bold text-gray-800">{locale === 'bn' ? '৬টি প্রকল্প' : '6 Projects'}</span>
-              </div>
-            </div> */}
           </div>
 
           {/* Enhanced Visual Element */}
@@ -226,6 +195,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 } 
