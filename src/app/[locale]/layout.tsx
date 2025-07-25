@@ -18,14 +18,14 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const isValidLocale = locales.includes(locale);
-  
+
   if (!isValidLocale) {
     notFound();
   }
 
   return {
-    title: locale === 'bn' 
-      ? 'বাংলাদেশে নও মুসলিমদের সহায়তা' 
+    title: locale === 'bn'
+      ? 'বাংলাদেশে নও মুসলিমদের সহায়তা'
       : 'New Muslim Support - Bangladesh',
     description: locale === 'bn'
       ? 'ইসলামে নতুন আগতদের জন্য সম্পূর্ণ গাইড এবং সহায়তা'
@@ -34,8 +34,8 @@ export async function generateMetadata({
       ? 'ইসলাম, মুসলিম, ধর্মান্তর, বাংলাদেশ, সহায়তা, গাইড'
       : 'Islam, Muslim, conversion, Bangladesh, support, guide',
     openGraph: {
-      title: locale === 'bn' 
-        ? 'বাংলাদেশে নও মুসলিমদের সহায়তা' 
+      title: locale === 'bn'
+        ? 'বাংলাদেশে নও মুসলিমদের সহায়তা'
         : 'New Muslim Support - Bangladesh',
       description: locale === 'bn'
         ? 'ইসলামে নতুন আগতদের জন্য সম্পূর্ণ গাইড এবং সহায়তা'
@@ -69,7 +69,7 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1B4332" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/public/images/DIBLogo.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
@@ -78,12 +78,12 @@ export default async function LocaleLayout({
           <div className="min-h-screen flex flex-col">
             {/* Main Header */}
             <Header />
-            
+
             {/* Main Content */}
             <main className="flex-1">
               {children}
             </main>
-            
+
             {/* Footer */}
             <Footer />
           </div>

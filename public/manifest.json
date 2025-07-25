@@ -1,19 +1,21 @@
 {
-  "name": "New Muslim Support - Bangladesh",
+  "name": "Islamic Dawah-based non-political service organization",
   "short_name": "Dawatul Islam Bangladesh",
-  "description": "Complete Guide and Support for New Muslims in Bangladesh",
+  "description": "Envisioning a Global Center for Wisdom and Outreach: A radiant beacon of enrichment, poised to ignite global enlightenment, inspire minds, and awaken hearts.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1B4332",
   "theme_color": "#1B4332",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/images/DIBLogo.png",
+      "size": "192x192",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/images/DIBLogo.png",
+      "size": "512x512",
       "sizes": "512x512",
       "type": "image/png"
     }

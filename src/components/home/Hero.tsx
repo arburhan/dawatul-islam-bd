@@ -12,15 +12,12 @@ import {
   GlobeAltIcon
 } from '@heroicons/react/24/solid';
 
-// Custom Mosque Icon Component (from user SVG)
-const MosqueIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
-  <svg className={className} viewBox="0 -64 640 640" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 480c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V160H0v320zm579.16-192c17.86-17.39 28.84-37.34 28.84-58.91 0-52.86-41.79-93.79-87.92-122.9-41.94-26.47-80.63-57.77-111.96-96.22L400 0l-8.12 9.97c-31.33 38.45-70.01 69.76-111.96 96.22C233.79 135.3 192 176.23 192 229.09c0 21.57 10.98 41.52 28.84 58.91h358.32zM608 320H192c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h32v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h64v-72c0-48 48-72 48-72s48 24 48 72v72h64v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h32c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM64 0S0 32 0 96v32h128V96c0-64-64-96-64-96z" />
-  </svg>
-);
+import DIBLogo from '@/lib/images/DIBLogo.png';
+import Image from 'next/image';
+
 
 const HeartIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className={className}>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className={className}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
   </svg>
 );
@@ -144,7 +141,7 @@ export default function Hero() {
               <div className="text-center mb-10 relative z-10">
                 <div className="relative inline-block mb-8">
                   <div className="w-24 h-24 rounded-3xl flex items-center justify-center shadow-2xl" style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}>
-                    <MosqueIcon className="w-12 h-12 text-white" />
+                    <Image src={DIBLogo} alt="Dawatul Islam Bangladesh Logo" width={60} height={60} className="w-18 h-18 object-cover rounded-full" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center shadow-lg" style={{ backgroundColor: 'var(--color-islamic-accent)' }}>
                     <SparklesIcon className="w-5 h-5" style={{ color: 'var(--color-islamic-dark)' }} />
