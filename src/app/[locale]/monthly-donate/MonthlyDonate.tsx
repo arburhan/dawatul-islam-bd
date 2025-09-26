@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import donateImage from '@/lib/images/donate.png';
+import toast, { Toaster } from 'react-hot-toast';
 
 const labels = {
     en: {
@@ -53,7 +54,7 @@ export default function MonthlyDonate({ locale = 'bn' }: MonthlyDonateProps) {
         e.preventDefault();
         setMessage(null);
         try {
-            const res = await fetch('/api/submit-monthly-donation', {
+            const res = await fetch('/api/submit-donation', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -64,7 +65,12 @@ export default function MonthlyDonate({ locale = 'bn' }: MonthlyDonateProps) {
             });
             const result = await res.json();
             if (result.success) {
-                setMessage(locale === 'bn' ? '🎉 জাযাকাল্লাহ খাইর ! আপনার মাসিক দানের তথ্য সফলভাবে সংরক্ষিত হয়েছে!' : '🎉 Jajakallah khair ! Your monthly donation has been saved successfully!');
+                toast.success(locale === 'bn' ? '🎉 জাযাকাল্লাহ খাইর! আপনার দানের তথ্য সফলভাবে সংরক্ষিত হয়েছে!' :
+                    '🎉 Jajakallah khair! Your donation has been saved successfully!');
+
+                setMessage(locale === 'bn'
+                    ? '🎉 জাযাকাল্লাহ খাইর! আপনার দানের তথ্য সফলভাবে সংরক্ষিত হয়েছে!'
+                    : '🎉 Jajakallah khair! Your donation has been saved successfully!');
                 setForm({
                     name: '',
                     address: '',
@@ -73,15 +79,21 @@ export default function MonthlyDonate({ locale = 'bn' }: MonthlyDonateProps) {
                     comment: '',
                 });
             } else {
-                setMessage(locale === 'bn' ? 'দুঃখিত, তথ্য সংরক্ষণে সমস্যা হয়েছে।' : 'Sorry, there was a problem saving your donation.');
+                toast.error(locale === 'bn' ? '❌ দুঃখিত, তথ্য সংরক্ষণে সমস্যা হয়েছে।' : '❌ Sorry, there was a problem saving your donation.');
+
             }
         } catch {
-            setMessage(locale === 'bn' ? 'দুঃখিত, সার্ভার সমস্যা হয়েছে।' : 'Sorry, there was a server error.');
+            toast.error(locale === 'bn' ? '❌ দুঃখিত, সার্ভার সমস্যা হয়েছে।' : '❌ Sorry, there was a server error.');
+
         }
     };
 
     return (
         <section className='py-5 md:py-18'>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
             <div className='py-5'>
                 <h2 className='text-center text-amber-500 font-bold text-3xl'>{t.monthlyDonator}</h2>
                 {message && (
