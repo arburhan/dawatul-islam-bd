@@ -19,6 +19,8 @@
     "google-spreadsheet": "^4.1.4",
     "googleapis": "^150.0.1",
     "lucide-react": "^0.513.0",
+    "mongodb": "^5.8.0",
+    "mongoose": "^7.6.4",
     "next": "15.3.3",
     "next-intl": "^4.1.0",
     "next-sanity": "^9.12.0",

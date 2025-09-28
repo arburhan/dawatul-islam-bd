@@ -128,7 +128,7 @@ export default function VolunteerPage() {
         setErrors({});
 
         try {
-            const res = await fetch('/api/submit-volunteer', {
+            const res = await fetch('/api/volunteer', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

@@ -54,7 +54,7 @@ export default function MonthlyDonate({ locale = 'bn' }: MonthlyDonateProps) {
         e.preventDefault();
         setMessage(null);
         try {
-            const res = await fetch('/api/submit-donation', {
+            const res = await fetch('/api/donation', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

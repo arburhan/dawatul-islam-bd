@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { submitVolunteerForm } from '@/lib/google-sheets';
+import { submitVolunteerForm } from '@/lib/db';
 
 export async function POST(req: NextRequest) {
     try {

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { appendDonationToSheet } from '@/lib/google-sheets';
+import { appendDonationToSheet } from '@/lib/db';
 
 export async function POST(req: NextRequest) {
     try {
