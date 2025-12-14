@@ -100,7 +100,7 @@ export default function Hero() {
               <div className="text-center mb-10 relative z-10">
                 <div className="relative inline-block mb-8">
                   <div className="w-24 h-24 rounded-3xl flex items-center justify-center shadow-2xl" style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}>
-                    <Image src={DIBLogo} alt="Dawatul Islam Bangladesh Logo" className="w-18 h-18 object-cover rounded-full" />
+                    <Image src={DIBLogo} alt="Dawatul Islam Bangladesh Logo" className="object-cover rounded-full" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center shadow-lg" style={{ backgroundColor: 'var(--color-islamic-accent)' }}>
                     <SparklesIcon className="w-5 h-5" style={{ color: 'var(--color-islamic-dark)' }} />

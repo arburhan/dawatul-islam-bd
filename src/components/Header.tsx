@@ -57,11 +57,8 @@ export default function Header() {
 
   // Define resourcesNavigation for the dropdown menu
   const resourcesNavigation = [
-    { name: locale === 'bn' ? 'গ্যালারি' : 'Gallery', href: `/${locale}/gallery` },
-    { name: locale === 'bn' ? 'ব্লগ' : 'Blog', href: `/${locale}/blog` },
-    { name: locale === 'bn' ? 'প্রশ্নোত্তর' : 'FAQ', href: `/${locale}/faq` },
-    { name: locale === 'bn' ? 'নোটিশ' : 'Notice', href: `/${locale}/notice` },
-    { name: locale === 'bn' ? 'ডাউনলোড' : 'Download', href: `/${locale}/download` },
+    { name: locale === 'bn' ? 'লগইন' : 'login', href: `/admin/login` },
+    
   ];
 
   return (

@@ -14,10 +14,7 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <body className="min-h-screen bg-gray-50">
                     <header className="bg-white shadow-sm">
                         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-                            <Link href="/" className="text-xl font-bold text-blue-700">Dawatul Islam</Link>
-                            <nav>
-                                <Link href="/admin/login" className="text-sm font-medium text-gray-600 hover:text-blue-600">Login</Link>
-                            </nav>
+                            <Link href="/" className="text-xl font-bold text-blue-700">Dawatul Islam</Link>                           
                         </div>
                     </header>
 
