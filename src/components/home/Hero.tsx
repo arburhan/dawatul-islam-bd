@@ -1,5 +1,6 @@
-'use client';
+"use client";
 
+import React, { useEffect, useState } from 'react';
 import { useLocale } from 'next-intl';
 import {
   PhoneIcon,
@@ -26,6 +27,9 @@ const HeartIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
 export default function Hero() {
   const locale = useLocale();
   const router = useRouter();
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => { setHydrated(true); }, []);
+  const t = (en: string, bn: string) => (hydrated && locale === 'bn' ? bn : en);
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-emerald-50/20 flex items-center overflow-hidden">
@@ -54,7 +58,7 @@ export default function Hero() {
                   <StarIcon className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-sm font-bold text-green-700">
-                  {locale === 'bn' ? 'ইসলামি দাওয়াহ-ভিত্তিক অরাজনৈতিক সেবামুলক সংস্থা' : 'Islamic Dawah-based Non-political Service Organization'}
+                  {t('Islamic Dawah-based Non-political Service Organization', 'ইসলামি দাওয়াহ-ভিত্তিক অরাজনৈতিক সেবামুলক সংস্থা')}
                 </span>
               </div>
             </div>
@@ -62,23 +66,11 @@ export default function Hero() {
             {/* Enhanced Main Heading - Reduced Size */}
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-6xl font-black leading-[0.9] text-gray-900">
-                {locale === 'bn' ? (
-                  <>
-                    <span className="block text-blue-500">প্রজ্ঞা ও দাওয়াতের পরিচর্যা কেন্দ্র</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="block text-blue-500"> Center for Nurturing Wisdom and Da`&#39;`wah </span>
-
-                  </>
-                )}
+                {t(' Center for Nurturing Wisdom and Da`\'`wah ', 'প্রজ্ঞা ও দাওয়াতের পরিচর্যা কেন্দ্র')}
               </h1>
 
               <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl font-light">
-                {locale === 'bn'
-                  ? 'সমৃদ্ধির এক উজ্জ্বল আলোকবর্তিকা, যা বিশ্বব্যাপী জ্ঞানালোক প্রজ্বলিত করতে, মনকে অনুপ্রাণিত করতে এবং     হৃদয়কে জাগিয়ে তুলতে উদ্যত।'
-                  : 'A radiant beacon of enrichment, poised to ignite global enlightenment, inspire minds, and awaken hearts.'
-                }
+                {t('A radiant beacon of enrichment, poised to ignite global enlightenment, inspire minds, and awaken hearts.', 'সমৃদ্ধির এক উজ্জ্বল আলোকবর্তিকা, যা বিশ্বব্যাপী জ্ঞানালোক প্রজ্বলিত করতে, মনকে অনুপ্রাণিত করতে এবং     হৃদয়কে জাগিয়ে তুলতে উদ্যত।')}
               </p>
             </div>
 
@@ -91,7 +83,7 @@ export default function Hero() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 <HeartIcon className="w-7 h-7 mr-4 text-white group-hover:scale-110 transition-transform duration-300" />
-                <span className="relative z-10 text-white">{locale === 'bn' ? 'মাসিক দাতা হোন' : ' Monthly Donator '}</span>
+                <span className="relative z-10 text-white">{t(' Monthly Donator ', 'মাসিক দাতা হোন')}</span>
                 <ArrowRightIcon className="w-6 h-6 ml-4 text-white group-hover:translate-x-2 transition-transform duration-300" />
               </Button>
 
@@ -117,30 +109,30 @@ export default function Hero() {
                   </div>
                 </div>
                 <h3 className="text-4xl font-bold text-gray-900 mb-4">
-                  {locale === 'bn' ? 'আপনার দানের হাতকে প্রসারিত করুন' : ' Extend Your Hand of Charity'}
+                  {t(' Extend Your Hand of Charity', 'আপনার দানের হাতকে প্রসারিত করুন')}
                 </h3>
                 <p className="text-gray-600 text-xl font-medium">
-                  {locale === 'bn' ? 'সম্পূর্ণ বিনামূল্যে এবং গোপনীয়' : 'Completely free and confidential'}
+                  {t('Completely free and confidential', 'সম্পূর্ণ বিনামূল্যে এবং গোপনীয়')}
                 </p>
               </div>
 
               {/* Enhanced Stats */}
               <div className="grid grid-cols-3 gap-8 mb-10">
                 <div className="text-center group">
-                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '১০,০০০+' : '10,000+'}</div>
-                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'সাহায্যপ্রাপ্ত' : 'Helped'}</div>
+                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{t('10,000+', '১০,০০০+')}</div>
+                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{t('Helped', 'সাহায্যপ্রাপ্ত')}</div>
                 </div>
                 <div className="text-center group">
-                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '১০০+' : '100+'}</div>
-                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'স্বেচ্ছাসেবক' : 'Volunteers'}</div>
+                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{t('100+', '১০০+')}</div>
+                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{t('Volunteers', 'স্বেচ্ছাসেবক')}</div>
                 </div>
                 <div className="text-center group">
-                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '২৪/৭' : '24/7'}</div>
-                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'সেবা' : 'Service'}</div>
+                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{t('24/7', '২৪/৭')}</div>
+                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{t('Service', 'সেবা')}</div>
                 </div>
                 <div className="text-center group">
-                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{locale === 'bn' ? '৬টি' : '6'} </div>
-                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{locale === 'bn' ? 'প্রকল্প' : 'Projects'}</div>
+                  <div className="text-4xl font-black text-green-700 mb-2 group-hover:scale-110 transition-transform duration-300">{t('6', '৬টি')}</div>
+                  <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">{t('Projects', 'প্রকল্প')}</div>
                 </div>
               </div>
 
@@ -153,10 +145,10 @@ export default function Hero() {
                   </div>
                   <div>
                     <h4 className="font-black text-red-800 text-2xl mb-1">
-                      {locale === 'bn' ? 'জরুরি সাহায্য' : 'Emergency Help'}
+                      {t('Emergency Help', 'জরুরি সাহায্য')}
                     </h4>
                     <p className="text-red-600 font-bold text-xl">
-                      {locale === 'bn' ? 'কল করুন: ০১৮১৮৬৪২১৬৬' : 'Call: ‎01818642166'}
+                      {t('Call: ‎01818642166', 'কল করুন: ০১৮১৮৬৪২১৬৬')}
                     </p>
                   </div>
                 </div>
@@ -167,7 +159,7 @@ export default function Hero() {
                 <div className="flex items-center space-x-3 bg-green-50 rounded-full px-6 py-3">
                   <ShieldCheckIcon className="w-6 h-6 text-green-500" />
                   <span className="text-sm font-bold text-green-700">
-                    {locale === 'bn' ? 'সম্পূর্ণ নিরাপদ ও গোপনীয়' : 'Completely Safe & Confidential'}
+                    {t('Completely Safe & Confidential', 'সম্পূর্ণ নিরাপদ ও গোপনীয়')}
                   </span>
                 </div>
               </div>
@@ -182,10 +174,10 @@ export default function Hero() {
 
         {/* Global Impact Indicator */}
         <div className="mt-20 text-center">
-          <div className="inline-flex items-center space-x-4 bg-white/90 backdrop-blur-sm rounded-full px-8 py-4 shadow-xl">
+            <div className="inline-flex items-center space-x-4 bg-white/90 backdrop-blur-sm rounded-full px-8 py-4 shadow-xl">
             <GlobeAltIcon className="w-8 h-8 text-green-700" />
             <span className="text-lg font-bold text-gray-800">
-              {locale === 'bn' ? 'বিশ্বব্যাপী মুসলিম সম্প্রদায়ের সাথে যুক্ত হোন' : 'Join the Global Muslim Community'}
+              {t('Join the Global Muslim Community', 'বিশ্বব্যাপী মুসলিম সম্প্রদায়ের সাথে যুক্ত হোন')}
             </span>
             <div className="flex space-x-1">
               <div className="w-2 h-2 bg-islamic-primary rounded-full animate-pulse"></div>

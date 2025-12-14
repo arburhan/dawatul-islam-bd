@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import { approveAdmin, listAdmins } from '../../../../lib/db';
+import { NextRequest, NextResponse } from 'next/server';
+import { approveAdmin, listAdmins } from '@/lib/db';
 import nodemailer from 'nodemailer';
 
 // ✅ Create email transporter
@@ -13,20 +13,39 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-export async function POST(req: Request) {
+/**
+ * POST /api/admin/manual-approve
+ * সুপার admin এর জন্য - কোনো admin কে manually approve করতে পারবে
+ * Body: { email: string, adminSecret: string }
+ */
+export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
-        if (!body?.email) return NextResponse.json({ success: false, message: 'Missing email' }, { status: 400 });
+        const { email, adminSecret } = await req.json();
+
+        // ✅ Simple security check
+        const SECRET = process.env.ADMIN_MANUAL_SECRET || 'dev-secret-change-in-production';
         
-        const access = Array.isArray(body.access) ? body.access : [];
-        
+        if (adminSecret !== SECRET) {
+            return NextResponse.json(
+                { error: 'Invalid admin secret' },
+                { status: 401 }
+            );
+        }
+
+        if (!email || !email.includes('@')) {
+            return NextResponse.json(
+                { error: 'Valid email required' },
+                { status: 400 }
+            );
+        }
+
         // ✅ Get admin name
         const admins = await listAdmins();
-        const admin = admins.find(a => a.email.toLowerCase() === body.email.toLowerCase());
+        const admin = admins.find(a => a.email.toLowerCase() === email.toLowerCase());
         const adminName = admin?.name || 'Admin';
 
-        // ✅ Approve admin
-        const res = await approveAdmin(body.email, access);
+        // ✅ Admin কে approve করব
+        await approveAdmin(email, []);
 
         // ✅ Send approval email
         try {
@@ -68,7 +87,7 @@ export async function POST(req: Request) {
                         <p><strong>ধাপগুলি:</strong></p>
                         <ol style="color: #333; line-height: 1.8;">
                             <li>উপরের বোতাম ক্লিক করুন বা লিঙ্কটি কপি করুন</li>
-                            <li>আপনার ইমেল ঠিকানা প্রবেশ করুন: <strong>${body.email}</strong></li>
+                            <li>আপনার ইমেল ঠিকানা প্রবেশ করুন: <strong>${email}</strong></li>
                             <li>আপনার মেইলবক্সে সাইন-ইন লিঙ্কটি খুঁজুন এবং ক্লিক করুন</li>
                             <li>এডমিন ড্যাশবোর্ডে স্বাগতম!</li>
                         </ol>
@@ -83,25 +102,28 @@ export async function POST(req: Request) {
             </html>
             `;
 
-            console.log('📧 Sending approval email to:', body.email);
+            console.log('📧 Sending approval email to:', email);
             await transporter.sendMail({
                 from: process.env.EMAIL_FROM,
-                to: body.email,
+                to: email,
                 subject: '✅ Muslim Aid Admin - আপনার অনুমোদন হয়েছে!',
                 html: emailHtml,
             });
-            console.log('✅ Approval email sent successfully to:', body.email);
+            console.log('✅ Approval email sent successfully to:', email);
         } catch (emailError) {
             console.error('⚠️ Warning: Failed to send approval email:', emailError);
             // Continue anyway - admin is approved even if email fails
         }
 
-        return NextResponse.json(res);
+        return NextResponse.json({
+            success: true,
+            message: `Admin ${email} has been approved! Notification email sent.`,
+        });
     } catch (error) {
-        console.error('Approve admin error:', error);
-        return NextResponse.json({ 
-            success: false, 
-            message: 'Failed to approve admin' 
-        }, { status: 500 });
+        console.error('Manual approve error:', error);
+        return NextResponse.json(
+            { error: 'Failed to approve admin' },
+            { status: 500 }
+        );
     }
 }

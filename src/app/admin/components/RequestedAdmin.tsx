@@ -9,10 +9,42 @@ const RequestedAdmin: React.FC = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch('/api/admin/list-admins');
-            const data = await res.json();
-            const list = data.admins || [];
-            setRequested(list.filter((a: Admin) => a.role === 'requested'));
+            try {
+                const res = await fetch('/api/admin/list-admins');
+                if (!res.ok) {
+                    console.error('/api/admin/list-admins failed', res.status, res.statusText);
+                    setRequested([]);
+                    return;
+                }
+
+                type ListAdminsResponse = { admins?: Admin[] };
+
+                function isListAdminsResponse(obj: unknown): obj is ListAdminsResponse {
+                    if (typeof obj !== 'object' || obj === null) return false;
+                    const rec = obj as Record<string, unknown>;
+                    return 'admins' in rec && Array.isArray(rec.admins);
+                }
+
+                // handle empty or invalid JSON bodies gracefully without using `any`
+                let data: ListAdminsResponse = {};
+                try {
+                    const text = await res.text();
+                    if (text) {
+                        const parsed = JSON.parse(text);
+                        if (isListAdminsResponse(parsed)) data = parsed;
+                        else data = {};
+                    }
+                } catch (err) {
+                    console.error('Failed to parse JSON from /api/admin/list-admins', err);
+                    data = {};
+                }
+
+                const list = Array.isArray(data.admins) ? data.admins : [];
+                setRequested(list.filter((a: Admin) => a.role === 'requested'));
+            } catch (err) {
+                console.error('Fetch error for /api/admin/list-admins', err);
+                setRequested([]);
+            }
         })();
     }, []);
 
