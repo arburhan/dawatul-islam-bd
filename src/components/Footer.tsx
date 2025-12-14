@@ -26,6 +26,7 @@ const FacebookIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
 export default function Footer() {
   const locale = useLocale();
   const t = useTranslations('footer');
+  const year = new Date().getFullYear();
 
   const quickLinks = [
     { name: t('about'), href: `/${locale}/about` },
@@ -196,7 +197,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-300">
-              © 2024 {locale === 'bn' ? 'দাওয়াতুল ইসলাম বাংলাদেশ' : 'New Muslim Support'}.
+              © {year} {locale === 'bn' ? 'দাওয়াতুল ইসলাম বাংলাদেশ' : 'New Muslim Support'}.
               {locale === 'bn' ? ' সকল অধিকার সংরক্ষিত।' : ' All rights reserved.'}
             </div>
 

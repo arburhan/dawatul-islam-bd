@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useLocale } from 'next-intl';
 import {
   PhoneIcon,
@@ -27,9 +27,7 @@ const HeartIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
 export default function Hero() {
   const locale = useLocale();
   const router = useRouter();
-  const [hydrated, setHydrated] = useState(false);
-  useEffect(() => { setHydrated(true); }, []);
-  const t = (en: string, bn: string) => (hydrated && locale === 'bn' ? bn : en);
+  const t = (en: string, bn: string) => (locale === 'bn' ? bn : en);
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-emerald-50/20 flex items-center overflow-hidden">
@@ -102,7 +100,7 @@ export default function Hero() {
               <div className="text-center mb-10 relative z-10">
                 <div className="relative inline-block mb-8">
                   <div className="w-24 h-24 rounded-3xl flex items-center justify-center shadow-2xl" style={{ background: `linear-gradient(135deg, var(--color-islamic-primary), var(--color-islamic-secondary))` }}>
-                    <Image src={DIBLogo} alt="Dawatul Islam Bangladesh Logo" width={60} height={60} className="w-18 h-18 object-cover rounded-full" />
+                    <Image src={DIBLogo} alt="Dawatul Islam Bangladesh Logo" className="w-18 h-18 object-cover rounded-full" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center shadow-lg" style={{ backgroundColor: 'var(--color-islamic-accent)' }}>
                     <SparklesIcon className="w-5 h-5" style={{ color: 'var(--color-islamic-dark)' }} />

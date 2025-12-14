@@ -65,15 +65,6 @@ export const queries = {
     social
   }`,
 
-  // Get testimonials
-  testimonials: `*[_type == "testimonial"] | order(publishedAt desc) {
-    _id,
-    name,
-    content,
-    location,
-    image,
-    isAnonymous
-  }`,
 
   // Get site settings
   siteSettings: `*[_type == "siteSettings"][0] {

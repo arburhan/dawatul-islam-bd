@@ -2,7 +2,6 @@ import Hero from '@/components/home/Hero';
 // import NavigationCards from '@/components/home/NavigationCards';
 import StatsSection from '@/components/home/StatsSection';
 // import LatestUpdates from '@/components/home/LatestUpdates';
-// import Testimonials from '@/components/home/Testimonials';
 // import CallToAction from '@/components/home/CallToAction';
 import Projects from '@/components/home/Projects';
 import DarulQarar from '@/components/home/DarulQarar';
@@ -56,8 +55,6 @@ export default async function HomePage({ params }: Props) {
       <StatsSection />
       {/* Latest Updates */}
       {/* <LatestUpdates /> */}
-      {/* Testimonials */}
-      {/* <Testimonials /> */}
       {/* Call to Action */}
       {/* <CallToAction /> */}
       {/* mosque location */}
