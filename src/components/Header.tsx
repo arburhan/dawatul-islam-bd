@@ -58,7 +58,7 @@ export default function Header() {
   // Define resourcesNavigation for the dropdown menu
   const resourcesNavigation = [
     { name: locale === 'bn' ? 'লগইন' : 'login', href: `/admin/login` },
-    
+
   ];
 
   return (
@@ -97,7 +97,7 @@ export default function Header() {
       {/* Main Header - Improved */}
       <div className="bg-white">
         <div className="container-custom">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between py-5">
             {/* Logo - Fixed Colors */}
             <Link href={`/${locale}`} className="flex items-center space-x-3 group">
               <div className="relative">

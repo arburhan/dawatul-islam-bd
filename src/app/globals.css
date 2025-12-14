@@ -1,11 +1,10 @@
-@import "tailwindcss";
-
-/* Bengali Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
 
 @layer base {
+
   /* CSS Variables for theming */
   :root {
     --color-islamic-primary: #1B4332;
@@ -42,18 +41,19 @@
 }
 
 @layer components {
+
   /* Font classes for different languages */
   html.font-bengali,
   html.font-bengali body,
   .font-bengali {
-    font-family: 'Noto Sans Bengali', 'Kalpurush', 'SolaimanLipi', sans-serif !important;
+    font-family: var(--font-bengali), 'Kalpurush', 'SolaimanLipi', sans-serif !important;
     line-height: 1.7;
   }
 
   html.font-english,
   html.font-english body,
   .font-english {
-    font-family: 'Inter', 'Open Sans', system-ui, sans-serif !important;
+    font-family: var(--font-inter), 'Open Sans', system-ui, sans-serif !important;
   }
 
   .font-arabic {
@@ -324,6 +324,7 @@
 }
 
 @layer utilities {
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
@@ -356,18 +357,37 @@
   }
 
   @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
   }
 
   @keyframes slideUp {
-    0% { transform: translateY(20px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   @keyframes slideDown {
-    0% { transform: translateY(-20px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   /* Loading spinner */
@@ -382,11 +402,14 @@
   }
 
   @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   /* Responsive font adjustments */
   @media (max-width: 640px) {
+
     html.font-bengali,
     html.font-bengali body,
     .font-bengali {
@@ -400,7 +423,7 @@
     .no-print {
       display: none !important;
     }
-    
+
     body {
       font-size: 12pt;
       line-height: 1.4;

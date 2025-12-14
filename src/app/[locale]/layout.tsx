@@ -4,8 +4,25 @@ import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Noto_Sans_Bengali, Inter } from 'next/font/google';
 
-const locales = ['bn'];
+// Configure Bengali font
+const notoSansBengali = Noto_Sans_Bengali({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['bengali'],
+  display: 'swap',
+  variable: '--font-bengali',
+});
+
+// Configure English font
+const inter = Inter({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const locales = ['bn', 'en'];
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -63,10 +80,12 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} dir="ltr" className={locale === 'bn' ? 'font-bengali' : 'font-english'}>
+    <html
+      lang={locale}
+      dir="ltr"
+      className={`${locale === 'bn' ? notoSansBengali.variable : inter.variable} ${locale === 'bn' ? 'font-bengali' : 'font-english'}`}
+    >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1B4332" />
         <link rel="icon" href="/public/images/DIBLogo.ico" />

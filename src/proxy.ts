@@ -2,7 +2,7 @@ import createMiddleware from 'next-intl/middleware';
 
 export default createMiddleware({
   // A list of all locales that are supported
-  locales: ['bn'],
+  locales: ['bn', 'en'],
 
   // Used when no locale matches
   defaultLocale: 'bn',
@@ -13,5 +13,5 @@ export default createMiddleware({
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ['/', '/(bn)/:path*']
+  matcher: ['/', '/(bn|en)/:path*']
 }; 
