@@ -40,25 +40,69 @@ export async function generateMetadata({
     notFound();
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dawatul-islam-bd.vercel.app';
+  const title = locale === 'bn'
+    ? 'দাওয়াতুল ইসলাম বাংলাদেশ'
+    : "Dawatul Islam Bangladesh";
+  const description = locale === 'bn'
+    ? 'সমৃদ্ধির একটি উজ্জ্বল আলোকবর্তিকা, বিশ্বকে আলোকিত করতে, মনকে অনুপ্রাণিত করতে এবং হৃদয়কে জাগ্রত করতে প্রচেষ্টারত।'
+    : 'A shining beacon of prosperity, striving to illuminate the world, inspire minds, and awaken hearts.';
+
   return {
-    title: locale === 'bn'
-      ? 'দাওয়াতুল ইসলাম বাংলাদেশ'
-      : "Dawatul Islam Bangladesh",
-    description: locale === 'bn'
-      ? 'A shining beacon of prosperity, striving to illuminate the world, inspire minds, and awaken hearts.'
-      : 'Complete guide and support for new Muslims in Bangladesh',
+    title,
+    description,
     keywords: locale === 'bn'
-      ? 'ইসলাম, মুসলিম, ধর্মান্তর, বাংলাদেশ, সহায়তা, গাইড'
-      : 'Islam, Muslim, conversion, Bangladesh, support, guide',
+      ? 'ইসলাম, মুসলিম, ধর্মান্তর, বাংলাদেশ, সহায়তা, গাইড, দাওয়াতুল ইসলাম, দাওয়াতুল ইসলাম বাংলাদেশ, দারুল কারার, ঢাকা দারুল কারার, দারুল কারার মসজিদ এবং মাদরাসা কমপ্লেক্স, দারুল কারার মসজিদ, দারুল কারার মাদরাসা, দারুল কারার কমপ্লেক্স'
+      : 'Islam, Muslim, conversion, Bangladesh, support, guide, Dawatul Islam, Dawatul Islam Bangladesh, Darul Karam, Dhaka Darul Karam, DARUL KARAR MOSJID AND MADRASHA COMPLEX, DARUL KARAR MOSJID, DARUL KARAR MADRASHA, DARUL KARAR COMPLEX',
+    authors: [{ name: 'Dawatul Islam Bangladesh' }],
+    creator: 'Dawatul Islam Bangladesh',
+    publisher: 'Dawatul Islam Bangladesh',
+    metadataBase: new URL(siteUrl),
+    alternates: {
+      canonical: `${siteUrl}/${locale}`,
+      languages: {
+        'bn': `${siteUrl}/bn`,
+        'en': `${siteUrl}/en`,
+      },
+    },
     openGraph: {
-      title: locale === 'bn'
-        ? 'দাওয়াতুল ইসলাম বাংলাদেশ'
-        : "Dawatul Islam Bangladesh",
-      description: locale === 'bn'
-        ? 'A shining beacon of prosperity, striving to illuminate the world, inspire minds, and awaken hearts.'
-        : 'Complete guide and support for new Muslims in Bangladesh',
+      title,
+      description,
       type: 'website',
       locale: locale === 'bn' ? 'bn_BD' : 'en_US',
+      url: `${siteUrl}/${locale}`,
+      siteName: 'Dawatul Islam Bangladesh',
+      images: [
+        {
+          url: `${siteUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: locale === 'bn' ? 'দাওয়াতুল ইসলাম বাংলাদেশ' : 'Dawatul Islam Bangladesh',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${siteUrl}/og-image.png`],
+      creator: '@DawatulIslamBD',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    verification: {
+      google: 'your-google-verification-code',
+      // yandex: 'your-yandex-verification-code',
+      // other: 'your-other-verification-code',
     },
   };
 }
