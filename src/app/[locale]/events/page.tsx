@@ -101,7 +101,7 @@ export default function EventsPage() {
                             <section className="mb-16">
                                 <h2 className="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
                                     <Calendar className="text-blue-600" size={32} />
-                                    আসন্ন ইভেন্ট
+                                    ইভেন্ট সমুহ
                                 </h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                     {upcomingEvents.map((event) => (

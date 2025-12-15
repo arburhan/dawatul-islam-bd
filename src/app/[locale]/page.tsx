@@ -9,6 +9,7 @@ import MarkazActivity from '@/components/home/MarkazActivity';
 import DonatorForm from '@/components/home/DonatorForm';
 import MosqueMap from '@/components/home/MosqueMap';
 import PrayerCard from '@/components/home/PrayerCard';
+import EventsSection from '@/components/home/EventsSection';
 
 // Facebook Icon Component
 const FacebookIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
@@ -49,6 +50,8 @@ export default async function HomePage({ params }: Props) {
       <MarkazActivity locale={locale as "bn" | "en"} />
       {/* Donator form */}
       <DonatorForm locale={locale as "bn" | "en"} />
+      {/* Events Section */}
+      <EventsSection />
       {/* Navigation Cards */}
       {/* <NavigationCards /> */}
       {/* Statistics Section */}
