@@ -6,12 +6,12 @@ import { Event } from '@/lib/models';
 // GET /api/events/[id] - Fetch single event by ID or slug
 export async function GET(
     req: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
         await connectDB();
 
-        const { id } = params;
+        const { id } = await params;
 
         // Try to find by slug first, then by _id
         let event = await Event.findOne({ slug: id }).lean();
@@ -54,7 +54,7 @@ export async function GET(
 // PUT /api/events/[id] - Update event (admin only)
 export async function PUT(
     req: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
         const session = await getServerSession();
@@ -68,7 +68,7 @@ export async function PUT(
 
         await connectDB();
 
-        const { id } = params;
+        const { id } = await params;
         const body = await req.json();
         const { title, slug, content, excerpt, eventDate, location, image, published } = body;
 
@@ -130,7 +130,7 @@ export async function PUT(
 // DELETE /api/events/[id] - Delete event (admin only)
 export async function DELETE(
     req: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
         const session = await getServerSession();
@@ -144,7 +144,7 @@ export async function DELETE(
 
         await connectDB();
 
-        const { id } = params;
+        const { id } = await params;
         const event = await Event.findByIdAndDelete(id);
 
         if (!event) {

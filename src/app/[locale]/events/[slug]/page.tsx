@@ -35,8 +35,9 @@ async function getEvent(slug: string): Promise<Event | null> {
     }
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const event = await getEvent(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const resolvedParams = await params;
+    const event = await getEvent(resolvedParams.slug);
 
     if (!event) {
         return {
@@ -77,8 +78,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default async function EventDetailPage({ params }: { params: { slug: string } }) {
-    const event = await getEvent(params.slug);
+export default async function EventDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+    const resolvedParams = await params;
+    const { locale, slug } = resolvedParams;
+    const event = await getEvent(slug);
 
     if (!event) {
         notFound();
@@ -137,7 +140,7 @@ export default async function EventDetailPage({ params }: { params: { slug: stri
             <div className="max-w-4xl mx-auto px-6 py-12">
                 {/* Back Button */}
                 <Link
-                    href="/events"
+                    href={`/${locale}/events`}
                     className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium mb-8 group"
                 >
                     <ArrowLeft size={20} className="group-hover:-translate-x-1 transition" />
@@ -159,7 +162,7 @@ export default async function EventDetailPage({ params }: { params: { slug: stri
                             <div>
                                 <div className="text-sm text-gray-500">তারিখ</div>
                                 <div className="font-semibold text-gray-800">
-                                    {new Date(event.eventDate).toLocaleDateString('bn-BD', {
+                                    {new Date(event.eventDate).toLocaleDateString(locale === 'en' ? 'en-US' : 'bn-BD', {
                                         day: 'numeric',
                                         month: 'long',
                                         year: 'numeric'
@@ -188,7 +191,7 @@ export default async function EventDetailPage({ params }: { params: { slug: stri
                         <div>
                             <div className="text-sm text-gray-500">প্রকাশিত</div>
                             <div className="font-semibold text-gray-800">
-                                {new Date(event.createdAt).toLocaleDateString('bn-BD')}
+                                {new Date(event.createdAt).toLocaleDateString(locale === 'en' ? 'en-US' : 'bn-BD')}
                             </div>
                         </div>
                     </div>
@@ -217,7 +220,7 @@ export default async function EventDetailPage({ params }: { params: { slug: stri
                         দাওয়াতুল ইসলাম বাংলাদেশ এর অন্যান্য কার্যক্রম সম্পর্কে জানুন
                     </p>
                     <Link
-                        href="/events"
+                        href={`/${locale}/events`}
                         className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition"
                     >
                         সকল ইভেন্ট দেখুন
