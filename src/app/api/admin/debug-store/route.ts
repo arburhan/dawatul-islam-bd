@@ -31,5 +31,5 @@ export async function GET() {
 
     const mongo = await getMongoInfo();
 
-    return NextResponse.json({ dataStorePath: DATA_STORE, exists, content, mongo, env: { MONGO_URI: !!process.env.MONGO_URI, GOOGLE_SHEET_ID: !!process.env.GOOGLE_SPREADSHEET_ID } });
+    return NextResponse.json({ dataStorePath: DATA_STORE, exists, content, mongo, env: { MONGO_URI: !!process.env.MONGO_URI } });
 }
