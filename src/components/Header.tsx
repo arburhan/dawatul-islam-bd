@@ -46,18 +46,19 @@ export default function Header() {
   }, []);
 
   const mainNavigation = [
-    { name: t('about'), href: `/${locale}/about` },
+    /* { name: t('about'), href: `/${locale}/about` }, */
     { name: t('projects'), href: `/${locale}/projects` },
     { name: t('markazActivity'), href: `/${locale}/markaz-activity` },
     { name: t('donator'), href: `/${locale}/donator` },
     { name: t('volunteer'), href: `/${locale}/volunteer` },
-    { name: t('contact'), href: `/${locale}/contact` },
+    { name: t('events'), href: `/${locale}/events` },
   ];
   const allNavigation = mainNavigation;
 
   // Define resourcesNavigation for the dropdown menu
   const resourcesNavigation = [
-    { name: locale === 'bn' ? 'লগইন' : 'login', href: `/admin/login` },
+    { name: locale === 'bn' ? 'যোগাযোগ' : 'contact', href: `/admin/contact` },
+    { name: locale === 'bn' ? 'লগইন' : 'login', href: `/admin/login` }
 
   ];
 
@@ -195,7 +196,18 @@ export default function Header() {
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
           <div className="container-custom py-4">
             <nav className="space-y-1">
-              {allNavigation.map((item) => (
+              {mainNavigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block px-3 py-2 text-gray-700 hover:text-green-700 hover:bg-green-50 rounded-lg font-medium transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="border-t border-gray-100 my-2"></div>
+              {resourcesNavigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
