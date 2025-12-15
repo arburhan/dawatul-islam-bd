@@ -22,22 +22,15 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Image optimization for Sanity
+  // Image optimization
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.sanity.io',
+        hostname: 'lh3.googleusercontent.com',
         pathname: '/**',
       },
     ],
-  },
-
-  // Environment variables
-  env: {
-    NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-    NEXT_PUBLIC_SANITY_DATASET: process.env.NEXT_PUBLIC_SANITY_DATASET,
-    NEXT_PUBLIC_SANITY_API_VERSION: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
   },
 };
 
