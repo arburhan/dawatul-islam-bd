@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import  { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import AdminSidebar from "../components/AdminSidebar";
 import RequestedAdmin from "../components/RequestedAdmin";
 import OtherAdmin from "../components/OtherAdmin";
 import VolunteersTable from "../components/VolunteersTable";
 import DonatorsTable from "../components/DonatorsTable";
+import EventsManager from "../components/EventsManager";
 
 export default function DashboardPage() {
     const router = useRouter();
@@ -27,7 +28,7 @@ export default function DashboardPage() {
         if (status === 'authenticated') {
             const userRole = (session?.user as { role?: string })?.role;
             console.log('🔐 Dashboard Auth Check:', { role: userRole, email: session?.user?.email });
-            
+
             if (userRole === 'requested') {
                 console.log('⏳ Redirecting pending admin to pending page');
                 router.push('/admin/pending');
@@ -77,7 +78,7 @@ export default function DashboardPage() {
                         <h1 className="text-2xl font-bold">Admin Dashboard</h1>
                         <p className="text-blue-100 text-sm">Welcome, {session?.user?.name || session?.user?.email}</p>
                     </div>
-                    <button 
+                    <button
                         onClick={() => signOut({ callbackUrl: '/admin/login' })}
                         className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition duration-200 flex items-center gap-2"
                     >
@@ -98,6 +99,7 @@ export default function DashboardPage() {
                 <section className="lg:col-span-3 bg-white rounded-2xl p-6 shadow">
                     {section === "requested" && <RequestedAdmin />}
                     {section === "other" && <OtherAdmin />}
+                    {section === "events" && <EventsManager />}
                     {section === "volunteers" && <VolunteersTable />}
                     {section === "monthly" && <DonatorsTable period="monthly" />}
                     {section === "yearly" && <DonatorsTable period="yearly" />}

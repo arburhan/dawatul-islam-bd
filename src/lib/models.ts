@@ -53,8 +53,23 @@ export const CallSchema = new Schema({
     at: { type: Date, default: Date.now }
 });
 
+export const EventSchema = new Schema({
+    title: { type: String, required: true },
+    slug: { type: String, required: true, unique: true },
+    content: { type: String, required: true }, // Lexical editor JSON state
+    excerpt: String,
+    eventDate: Date,
+    location: String,
+    image: String, // Main event image URL
+    published: { type: Boolean, default: false },
+    createdBy: String, // Admin email
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now }
+});
+
 export const Admin = mongoose.models.Admin || mongoose.model('Admin', AdminSchema);
 export const Volunteer = mongoose.models.Volunteer || mongoose.model('Volunteer', VolunteerSchema);
 export const Donator = mongoose.models.Donator || mongoose.model('Donator', DonatorSchema);
 export const Note = mongoose.models.Note || mongoose.model('Note', NoteSchema);
 export const Call = mongoose.models.Call || mongoose.model('Call', CallSchema);
+export const Event = mongoose.models.Event || mongoose.model('Event', EventSchema);

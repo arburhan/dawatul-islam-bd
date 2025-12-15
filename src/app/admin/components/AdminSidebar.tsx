@@ -5,6 +5,7 @@ const AdminSidebar: React.FC<{ current: string; onNavigate: (s: string) => void 
     const items = [
         { key: 'requested', label: 'Requested Admin' },
         { key: 'other', label: 'Other Admin' },
+        { key: 'events', label: 'Events' },
         { key: 'volunteers', label: 'Volunteers' },
         { key: 'monthly', label: 'Monthly Donator' },
         { key: 'yearly', label: 'Yearly Donator' },
