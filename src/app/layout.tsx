@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://dawatul-islam-bd.vercel.app'),
   title: "New Muslim Support - Bangladesh",
   description: "Complete guide and support for new Muslims in Bangladesh",
 };
