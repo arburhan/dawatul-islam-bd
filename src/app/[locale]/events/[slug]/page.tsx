@@ -26,7 +26,7 @@ async function getEvent(slug: string): Promise<EventType | null> {
         await connectDB();
         const decodedSlug = decodeURIComponent(slug);
 
-        const event = await Event.findOne({ slug: decodedSlug }).lean();
+        const event = await Event.findOne({ slug: decodedSlug }).lean() as any;
 
         if (!event) return null;
 
