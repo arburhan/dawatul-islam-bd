@@ -4,7 +4,10 @@ import { Calendar, MapPin, ArrowLeft, Clock } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import LexicalRenderer from '@/components/LexicalRenderer';
 
-interface Event {
+import connectDB from '@/lib/mongoose';
+import { Event } from '@/lib/models';
+
+interface EventType {
     _id: string;
     title: string;
     slug: string;
@@ -18,17 +21,22 @@ interface Event {
     updatedAt: string;
 }
 
-async function getEvent(slug: string): Promise<Event | null> {
+async function getEvent(slug: string): Promise<EventType | null> {
     try {
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-        const res = await fetch(`${baseUrl}/api/events/${slug}`, {
-            cache: 'no-store'
-        });
+        await connectDB();
+        const decodedSlug = decodeURIComponent(slug);
 
-        if (!res.ok) return null;
+        const event = await Event.findOne({ slug: decodedSlug }).lean();
 
-        const data = await res.json();
-        return data.event || null;
+        if (!event) return null;
+
+        return {
+            ...event,
+            _id: event._id.toString(),
+            createdAt: event.createdAt?.toISOString(),
+            updatedAt: event.updatedAt?.toISOString(),
+            eventDate: event.eventDate?.toISOString(),
+        } as unknown as EventType;
     } catch (error) {
         console.error('Error fetching event:', error);
         return null;
@@ -45,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         };
     }
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     const description = event.excerpt || `${event.title} - দাওয়াতুল ইসলাম বাংলাদেশ`;
 
     return {
@@ -88,7 +96,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ lo
     }
 
     const isUpcoming = event.eventDate && new Date(event.eventDate) >= new Date();
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
     // JSON-LD structured data for SEO
     const jsonLd = {

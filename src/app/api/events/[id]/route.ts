@@ -12,11 +12,12 @@ export async function GET(
         await connectDB();
 
         const { id } = await params;
+        const decodedId = decodeURIComponent(id);
 
-        // Try to find by slug first, then by _id
-        let event = await Event.findOne({ slug: id }).lean();
-        if (!event) {
-            event = await Event.findById(id).lean();
+        // Try to find by slug first
+        let event = await Event.findOne({ slug: decodedId }).lean();
+        if (!event && /^[0-9a-fA-F]{24}$/.test(decodedId)) {
+            event = await Event.findById(decodedId).lean();
         }
 
         if (!event) {

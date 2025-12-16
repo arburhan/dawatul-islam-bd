@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
 
         // ✅ Send approval email
         try {
-            const loginUrl = `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/admin/login`;
+            const loginUrl = `${process.env.NEXTAUTH_URL}/admin/login`;
             const emailHtml = `
             <!DOCTYPE html>
             <html>

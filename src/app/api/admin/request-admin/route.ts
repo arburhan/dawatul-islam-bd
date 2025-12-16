@@ -49,7 +49,7 @@ export async function POST(req: Request) {
         
         // ✅ Send confirmation email with NextAuth verification flow
         try {
-            const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
+            const baseUrl = process.env.NEXTAUTH_URL;
             const pendingPageUrl = `${baseUrl}/admin/pending`;
             
             const emailHtml = `

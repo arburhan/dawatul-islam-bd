@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import Pagination from '@/components/Pagination';
+import { useParams } from 'next/navigation';
 
 interface Event {
     _id: string;
@@ -154,9 +155,10 @@ export default function EventsPage() {
 }
 
 function EventCard({ event, isUpcoming = false }: { event: Event; isUpcoming?: boolean }) {
+    const { locale } = useParams();
     return (
         <Link
-            href={`/events/${event.slug}`}
+            href={`/${locale}/events/${event.slug}`}
             className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
         >
             {/* Image */}
