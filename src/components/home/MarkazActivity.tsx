@@ -25,10 +25,6 @@ const activities = {
             en: "Higher Dawah and Research Madrasa"
         },
         {
-            bn: "তাফহিমুল কুরআন মাদরাসা",
-            en: "Tafhimul Quran Madrasa"
-        },
-        {
             bn: "গ্রন্থাগার ও লাইব্রেরী",
             en: "Library"
         },
